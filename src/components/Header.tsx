@@ -1,65 +1,46 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-/**
- * Sticky site header with navigation.
- * Customize: logo URL, site name, and nav items.
- * Includes mobile hamburger menu.
- */
-
-const NAV_ITEMS = [
-  { label: 'Home', href: '/' },
-  { label: 'Procedures', href: '/procedures' },
-  { label: 'About', href: '/about' },
-  { label: 'For Men', href: '/for-men' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Blog', href: '/blog' },
-];
-
 export default function Header() {
-  const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="site-header">
-      <div className="site-header__inner">
-        <Link href="/" className="site-header__logo">
-          {/* Replace with client logo: <img src="/logo.jpg" alt="Site Name" /> */}
-          <span className="site-header__logo-text">
-            <span className="site-header__logo-accent">XY</span> Sculpt
-          </span>
+      <div className="header-inner">
+        <Link href="/" className="brand">
+          XY<span>SCULPT</span><span className="brand-md">MD</span>
+          <span className="brand-tag">Male Plastic Surgery</span>
         </Link>
 
-        <button
-          className="site-header__hamburger"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <span /><span /><span />
-        </button>
-
-        <nav className={`site-header__nav ${mobileOpen ? 'site-header__nav--open' : ''}`}>
-          {NAV_ITEMS.map(item => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`site-header__nav-link ${pathname === item.href ? 'site-header__nav-link--active' : ''}`}
-              onClick={() => setMobileOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact"
-            className="site-header__cta"
-            onClick={() => setMobileOpen(false)}
-          >
-            Book Consultation
-          </Link>
+        <nav className={`nav-links${open ? ' open' : ''}`}>
+          <Link href="/#procedures" onClick={() => setOpen(false)}>Procedures</Link>
+          <Link href="/#results" onClick={() => setOpen(false)}>Results</Link>
+          <Link href="/#doctor" onClick={() => setOpen(false)}>Dr. Moein</Link>
+          <Link href="/#faq" onClick={() => setOpen(false)}>FAQ</Link>
+          <Link href="/#resources" onClick={() => setOpen(false)}>Resources</Link>
         </nav>
+
+        <div className="header-right">
+          <a href="tel:+13104558020" className="header-phone">(310) 455-8020</a>
+          <Link href="/#contact" className="btn btn-primary header-cta">Book Consultation</Link>
+          <button
+            className="mobile-toggle"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? (
+              <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" style={{ width: 24, height: 24 }}>
+                <path d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" style={{ width: 24, height: 24 }}>
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
     </header>
   );
