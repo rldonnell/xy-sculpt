@@ -128,12 +128,15 @@ section { padding: 100px 0; position: relative; }
 .nav-links a { color: var(--text-secondary); transition: color .25s; position: relative; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a.nav-active { color: var(--accent); }
+.nav-links a.btn-primary { color: var(--bg); }
+.nav-links a.btn-primary:hover { color: var(--bg); }
 .nav-links a::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
   width: 0; height: 2px; background: var(--accent); transition: width .3s;
 }
 .nav-links a:hover::after { width: 100%; }
 .nav-links a.nav-active::after { width: 100%; }
+.nav-links a.btn-primary::after { display: none; }
 .nav-phone {
   display: flex; align-items: center; gap: 8px;
   font-family: var(--font-mono); font-size: 14px;
