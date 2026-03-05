@@ -33,7 +33,7 @@ export default function ContactPage() {
         </div>
         <div className="contact-info__item">
           <h3>Email</h3>
-          <p><a href="mailto:consult@xysculpt.com">consult@xysculpt.com</a></p>
+          <p><a href="mailto:consult@xsculptmd.com">consult@xsculptmd.com</a></p>
         </div>
         <div className="contact-info__item">
           <h3>Office Hours</h3>

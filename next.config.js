@@ -4,12 +4,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'xysculpt.com',
+        hostname: 'xsculptmd.com',
         pathname: '/wp-content/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: '*.xysculpt.com',
+        hostname: '*.xsculptmd.com',
         pathname: '/wp-content/uploads/**',
       },
     ],

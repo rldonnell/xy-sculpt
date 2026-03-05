@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s | XY Sculpt',
   },
   description: 'Expert cosmetic sculpting designed for men. Approachable care, confident results.',
-  metadataBase: new URL('https://xysculpt.com'),
+  metadataBase: new URL('https://xsculptmd.com'),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
