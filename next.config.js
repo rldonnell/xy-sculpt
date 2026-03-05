@@ -4,12 +4,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'xsculptmd.com',
+        hostname: 'wordpress-1594089-6258358.cloudwaysapps.com',
         pathname: '/wp-content/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: '*.xsculptmd.com',
+        hostname: '*.cloudwaysapps.com',
         pathname: '/wp-content/uploads/**',
       },
     ],

@@ -4,7 +4,7 @@
  * ISR revalidation keeps content fresh without full rebuilds.
  */
 
-const WP_API = process.env.WORDPRESS_API_URL || 'https://example.com/wp-json/wp/v2';
+const WP_API = process.env.WORDPRESS_API_URL || 'https://wordpress-1594089-6258358.cloudwaysapps.com/wp-json/wp/v2';
 
 export interface WPPost {
   id: number;

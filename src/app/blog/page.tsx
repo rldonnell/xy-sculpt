@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Expert insights on male plastic surgery, recovery tips, procedure guides, and the latest in aesthetic technology from Dr. Babak Moein.',
 };
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export default async function BlogPage() {
   const posts = await getPosts();
