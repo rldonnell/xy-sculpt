@@ -1,8 +1,14 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Why Men Choose Us | XY Sculpt',
-  description: 'Discover why more men are choosing cosmetic procedures designed with male aesthetics and discretion in mind.',
+  title: 'Why Men Choose Cosmetic Surgery | XY Sculpt',
+  description: 'Discover why more men are choosing cosmetic procedures. Male-specific expertise, natural-looking results, discreet care, and fast recovery options at XY Sculpt.',
+  alternates: { canonical: 'https://xsculptmd.com/for-men' },
+  openGraph: {
+    title: 'Why Men Choose Cosmetic Surgery | XY Sculpt',
+    description: 'The rise of male cosmetic procedures — natural results, discreet care, and male-specific expertise.',
+    url: 'https://xsculptmd.com/for-men',
+  },
 };
 
 const REASONS = [

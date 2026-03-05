@@ -1,8 +1,14 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Gallery | XY Sculpt',
-  description: 'Before and after photos showcasing our natural-looking results from cosmetic procedures for men.',
+  title: 'Before & After Gallery | Male Cosmetic Surgery Results',
+  description: 'View before and after photos of male cosmetic surgery results at XY Sculpt. Gynecomastia, liposuction, eyelid surgery, rhinoplasty & jawline contouring.',
+  alternates: { canonical: 'https://xsculptmd.com/gallery' },
+  openGraph: {
+    title: 'Before & After Gallery | XY Sculpt',
+    description: 'Real results from real patients. Natural-looking male cosmetic surgery outcomes.',
+    url: 'https://xsculptmd.com/gallery',
+  },
 };
 
 const GALLERY_ITEMS = [

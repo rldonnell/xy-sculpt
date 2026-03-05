@@ -4,11 +4,62 @@ import ContentRow from '@/components/ContentRow';
 export const metadata = {
   title: 'XY Sculpt | Expert Cosmetic Care for Men',
   description: 'Discreet, personalized cosmetic sculpting designed exclusively for men. Board-certified expertise, natural-looking results.',
+  alternates: { canonical: 'https://xsculptmd.com' },
+};
+
+const homepageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['MedicalBusiness', 'CosmeticSurgery'],
+      '@id': 'https://xsculptmd.com/#organization',
+      name: 'XY Sculpt',
+      url: 'https://xsculptmd.com',
+      description: 'Expert cosmetic sculpting designed exclusively for men. Board-certified surgeons specializing in gynecomastia, liposuction, facial refinement and non-surgical treatments.',
+      telephone: '+1234567890',
+      email: 'consult@xsculptmd.com',
+      image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&h=630&fit=crop',
+      priceRange: '$$$$',
+      openingHoursSpecification: [
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '18:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '10:00', closes: '16:00' },
+      ],
+      medicalSpecialty: 'PlasticSurgery',
+      availableService: [
+        { '@type': 'MedicalProcedure', name: 'Gynecomastia Surgery (Male Breast Reduction)', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Liposuction & Body Contouring', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Eyelid Surgery (Blepharoplasty)', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Rhinoplasty', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Jawline & Neck Contouring', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Non-Surgical Treatments (Botox, Fillers, Sculptra)', procedureType: 'Noninvasive' },
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://xsculptmd.com/#website',
+      url: 'https://xsculptmd.com',
+      name: 'XY Sculpt',
+      publisher: { '@id': 'https://xsculptmd.com/#organization' },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://xsculptmd.com/#webpage',
+      url: 'https://xsculptmd.com',
+      name: 'XY Sculpt | Expert Cosmetic Care for Men',
+      isPartOf: { '@id': 'https://xsculptmd.com/#website' },
+      about: { '@id': 'https://xsculptmd.com/#organization' },
+      description: 'Discreet, personalized cosmetic sculpting designed exclusively for men. Board-certified expertise, natural-looking results.',
+    },
+  ],
 };
 
 export default function HomePage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
+      />
       {/* Hero Banner */}
       <section className="hero-banner">
         <div className="hero-banner__content">

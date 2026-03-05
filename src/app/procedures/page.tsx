@@ -1,8 +1,66 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Procedures | XY Sculpt',
-  description: 'Explore our full range of cosmetic procedures designed specifically for men, from gynecomastia correction to facial refinement.',
+  title: 'Male Cosmetic Surgery Procedures | XY Sculpt',
+  description: 'Explore our full range of cosmetic procedures designed specifically for men: gynecomastia correction, liposuction, eyelid surgery, rhinoplasty, jawline contouring & non-surgical treatments.',
+  alternates: { canonical: 'https://xsculptmd.com/procedures' },
+  openGraph: {
+    title: 'Male Cosmetic Surgery Procedures | XY Sculpt',
+    description: 'Full range of cosmetic procedures designed for men. Gynecomastia, liposuction, facial refinement & more.',
+    url: 'https://xsculptmd.com/procedures',
+  },
+};
+
+const proceduresSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Male Cosmetic Surgery Procedures',
+  url: 'https://xsculptmd.com/procedures',
+  description: 'Full range of cosmetic procedures designed specifically for men.',
+  mainEntity: [
+    {
+      '@type': 'MedicalProcedure',
+      name: 'Gynecomastia Surgery (Male Breast Reduction)',
+      procedureType: 'Surgical',
+      description: 'Address enlarged breast tissue with precision and confidence. Our most popular procedure, designed with male anatomy in mind.',
+      bodyLocation: 'Chest',
+    },
+    {
+      '@type': 'MedicalProcedure',
+      name: 'Liposuction & Body Contouring',
+      procedureType: 'Surgical',
+      description: 'Sculpt and define your physique. Remove stubborn fat deposits and enhance muscle definition for a more athletic appearance.',
+      bodyLocation: 'Abdomen, Flanks, Chest',
+    },
+    {
+      '@type': 'MedicalProcedure',
+      name: 'Eyelid Surgery (Blepharoplasty)',
+      procedureType: 'Surgical',
+      description: 'Open up your eyes and reduce signs of fatigue. Subtle refinements that make a noticeable impact.',
+      bodyLocation: 'Eyes',
+    },
+    {
+      '@type': 'MedicalProcedure',
+      name: 'Rhinoplasty',
+      procedureType: 'Surgical',
+      description: 'Refine your profile with a nose procedure tailored to male proportions. Natural-looking results that complement your features.',
+      bodyLocation: 'Nose',
+    },
+    {
+      '@type': 'MedicalProcedure',
+      name: 'Jawline & Neck Contouring',
+      procedureType: 'Surgical',
+      description: 'Enhance definition and create a stronger jaw profile. Strengthen your appearance with precision techniques.',
+      bodyLocation: 'Jaw, Neck',
+    },
+    {
+      '@type': 'MedicalProcedure',
+      name: 'Non-Surgical Treatments',
+      procedureType: 'Noninvasive',
+      description: 'Botox, fillers, and Sculptra for subtle enhancement without downtime. Perfect for maintaining a natural appearance.',
+      bodyLocation: 'Face',
+    },
+  ],
 };
 
 const PROCEDURES = [
@@ -48,6 +106,10 @@ const PROCEDURES = [
 export default function ProceduresPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(proceduresSchema) }}
+      />
       {/* Page Hero */}
       <section className="page-hero">
         <h1>Our Procedures</h1>

@@ -1,8 +1,14 @@
 import GHLForm from '@/components/GHLForm';
 
 export const metadata = {
-  title: 'Book Your Consultation | XY Sculpt',
-  description: 'Schedule a confidential consultation with our team. No pressure—just honest conversation about your goals.',
+  title: 'Book a Confidential Consultation | XY Sculpt',
+  description: 'Schedule a confidential male cosmetic surgery consultation at XY Sculpt. No pressure — honest conversation about your goals with board-certified surgeons.',
+  alternates: { canonical: 'https://xsculptmd.com/contact' },
+  openGraph: {
+    title: 'Book a Confidential Consultation | XY Sculpt',
+    description: 'Schedule your consultation with our board-certified male cosmetic surgeons.',
+    url: 'https://xsculptmd.com/contact',
+  },
 };
 
 export default function ContactPage() {

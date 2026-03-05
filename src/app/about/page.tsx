@@ -1,8 +1,14 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About Us | XY Sculpt',
-  description: 'Learn about our board-certified surgeons and our commitment to personalized, discreet cosmetic care for men.',
+  title: 'About Our Board-Certified Male Cosmetic Surgeons',
+  description: 'Meet the board-certified surgeons at XY Sculpt. 15+ years specializing in male cosmetic surgery with a commitment to natural results, discretion, and personalized care.',
+  alternates: { canonical: 'https://xsculptmd.com/about' },
+  openGraph: {
+    title: 'About Our Board-Certified Male Cosmetic Surgeons | XY Sculpt',
+    description: 'Meet the team behind XY Sculpt. 15+ years specializing in male cosmetic surgery.',
+    url: 'https://xsculptmd.com/about',
+  },
 };
 
 const VALUES = [

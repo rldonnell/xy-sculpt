@@ -2,8 +2,14 @@ import Link from 'next/link';
 import { getPosts, getFeaturedImage, getAuthorName, formatDate, stripHtml } from '@/lib/wordpress';
 
 export const metadata = {
-  title: 'Blog',
-  description: 'XY Male Cosmetic Surgery — latest articles and updates.',
+  title: 'Male Cosmetic Surgery Blog | Tips, Guides & News',
+  description: 'Expert articles on male cosmetic surgery: gynecomastia, liposuction, facial procedures, recovery tips, and the latest in men\'s aesthetic treatments.',
+  alternates: { canonical: 'https://xsculptmd.com/blog' },
+  openGraph: {
+    title: 'Male Cosmetic Surgery Blog | XY Sculpt',
+    description: 'Expert articles on male cosmetic procedures, recovery tips, and aesthetic treatments.',
+    url: 'https://xsculptmd.com/blog',
+  },
 };
 
 export default async function BlogPage() {
