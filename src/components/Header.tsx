@@ -83,7 +83,7 @@ export default function Header() {
             className="btn btn-primary"
             onClick={(e) => handleNavClick(e, pathname === '/' ? '/#contact' : '/#contact')}
           >
-            Book Consultation
+            Book a Conversation
           </a>
         </nav>
 
