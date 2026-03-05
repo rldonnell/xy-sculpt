@@ -1,23 +1,66 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 const NAV_ITEMS = [
-  { label: 'Procedures', href: '#procedures' },
-  { label: 'Results', href: '#results' },
-  { label: 'Dr. Moein', href: '#doctor' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Resources', href: '#resources' },
+  { label: 'Procedures', href: '/#procedures' },
+  { label: 'Results', href: '/#results' },
+  { label: 'Dr. Moein', href: '/#doctor' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Resources', href: '/#resources' },
+  { label: 'Blog', href: '/blog' },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Track scroll for header shrink effect
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setMobileOpen(false);
+
+    // For anchor links (/#section), if we're already on the homepage, smooth scroll
+    if (href.startsWith('/#')) {
+      const hash = href.slice(1); // e.g. #procedures
+      if (pathname === '/') {
+        e.preventDefault();
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+      // If not on homepage, the browser will navigate to / then scroll to the hash
+    }
+  };
+
+  const isActive = (href: string) => {
+    if (href === '/blog') return pathname.startsWith('/blog');
+    return false;
+  };
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="nav-inner">
-        <Link href="/" className="brand" onClick={() => setMobileOpen(false)}>
+        <Link href="/" className="brand">
           <div className="brand-mark">
             XY<span>SCULPT</span><span className="brand-md">MD</span>
           </div>
@@ -29,12 +72,17 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              onClick={() => setMobileOpen(false)}
+              className={isActive(item.href) ? 'nav-active' : ''}
+              onClick={(e) => handleNavClick(e, item.href)}
             >
               {item.label}
             </a>
           ))}
-          <a href="#contact" className="btn btn-primary" onClick={() => setMobileOpen(false)}>
+          <a
+            href={pathname === '/' ? '#contact' : '/#contact'}
+            className="btn btn-primary"
+            onClick={(e) => handleNavClick(e, pathname === '/' ? '/#contact' : '/#contact')}
+          >
             Book Consultation
           </a>
         </nav>
