@@ -171,13 +171,20 @@ export default function HomePage() {
             </div>
             <div className="hero-visual">
               <div className="hero-image-wrap">
-                {/* Replace with actual hero image */}
-                <img
-                  className="hero-img"
-                  src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&h=800&fit=crop"
-                  alt="Dr. Babak Moein - Male Plastic Surgery Specialist"
-                  loading="eager"
-                />
+                <picture>
+                  <source srcSet="/hero-model-mobile.webp" media="(max-width: 600px)" type="image/webp" />
+                  <source srcSet="/hero-model.webp" type="image/webp" />
+                  <img
+                    className="hero-img"
+                    src="/hero-model.jpg"
+                    alt="Male body sculpting results - XYSculptMD"
+                    width={800}
+                    height={800}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                  />
+                </picture>
               </div>
               <div className="hero-stats-float">
                 <div className="hsf-item"><span className="hsf-num">20+</span><span className="hsf-label">Years</span></div>
@@ -311,12 +318,16 @@ export default function HomePage() {
           <div className="section-title">Meet Dr. Babak <em>Moein</em></div>
           <div className="doctor-grid">
             <div className="doctor-photo">
-              <img
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=800&fit=crop"
-                alt="Dr. Babak Moein, MD, FACS"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet="/dr-moein.webp" type="image/webp" />
+                <img
+                  src="/dr-moein.jpg"
+                  alt="Dr. Babak Moein, MD, FACS"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div className="doctor-content">
               <h3>Dr. Babak Moein, MD, FACS</h3>
