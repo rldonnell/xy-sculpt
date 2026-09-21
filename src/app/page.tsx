@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import ContentRow from '@/components/ContentRow';
 import FAQAccordion from '@/components/FAQAccordion';
 
 export const metadata = {
-  title: 'XYSculptMD | Male Plastic Surgery Los Angeles | Dr. Babak Moein',
-  description: 'Board-certified cosmetic surgeon Dr. Babak Moein specializes in male body sculpting, gynecomastia surgery, HD lipo, VASER, and facial procedures in Beverly Hills, Los Angeles.',
+  title: 'Abdominal Etching Los Angeles | AbEtch+ | XYSculptMD',
+  description: 'Dr. Babak Moein’s signature procedure: HD VASER abdominal etching refined with targeted dermal fillers for visible muscle definition. Beverly Hills, Los Angeles.',
   alternates: { canonical: 'https://xsculptmd.com' },
 };
 
@@ -15,7 +16,7 @@ const homepageSchema = {
       '@id': 'https://xsculptmd.com/#organization',
       name: 'XYSculptMD',
       url: 'https://xsculptmd.com',
-      description: 'Male plastic surgery and body sculpting by Dr. Babak Moein, MD, FACS. Gynecomastia, HD lipo, VASER, abdominal etching, and facial procedures.',
+      description: 'Abdominal etching by Dr. Babak Moein, MD, FACS: HD VASER liposuction refined with targeted dermal fillers for visible muscle definition. Also specializing in male tummy tuck, male butt lift, male liposuction 360, and gynecomastia surgery, Beverly Hills.',
       telephone: '+13104558020',
       email: 'consult@xsculptmd.com',
       priceRange: '$$$$',
@@ -27,12 +28,12 @@ const homepageSchema = {
         addressCountry: 'US',
       },
       availableService: [
-        { '@type': 'MedicalProcedure', name: 'Gynecomastia Surgery', procedureType: 'Surgical' },
-        { '@type': 'MedicalProcedure', name: 'HD Lipo & VASER Body Sculpting', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Abdominal Etching', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Gynecomastia Surgery', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Tummy Tuck', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Butt Lift', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Liposuction 360', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'HD Lipo & VASER Body Sculpting', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Skin Tightening (Renuvion)', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Chin & Jaw Definition', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Eyelid Surgery (Blepharoplasty)', procedureType: 'Surgical' },
@@ -51,20 +52,14 @@ const homepageSchema = {
 
 const PROCEDURES = [
   { num: '01', title: 'Gynecomastia Surgery', desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein\u2019s technique combines gland excision with VASER precision for natural-looking results.', href: '/procedures/gynecomastia' },
-  { num: '02', title: 'HD Lipo & VASER', desc: 'High-definition body contouring using ultrasound technology to selectively target fat and reveal underlying muscle structure. Precision sculpting for a lean, athletic physique.' },
-  { num: '03', title: 'Abdominal Etching', desc: 'Sculpt visible six-pack definition by strategically removing fat along the natural lines of your abdominal muscles. The ultimate procedure for men who train hard but cannot achieve full definition.', href: '/procedures/abdominal-etching' },
-  { num: '04', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.', href: '/procedures/male-tummy-tuck' },
-  { num: '05', title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions \u2014 an athletic, upward contour rather than a curvier female shape. Often paired with lipo 360 or ab etching.', href: '/procedures/male-butt-lift' },
-  { num: '06', title: 'Skin Tightening', desc: 'Restore a defined jawline and eliminate loose skin. Dr. Moein\u2019s male-specific approach maintains masculine facial structure while reversing visible signs of aging.' },
-  { num: '07', title: 'Chin & Jaw Definition', desc: 'Strengthen facial profile and sharpen the chin and jawline. Surgical and injectable options available for a more commanding, masculine appearance.' },
-  { num: '08', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.' },
-  { num: '09', title: 'Eyelid Surgery', desc: 'Eliminate tired, heavy-looking eyes by removing excess skin and fat from the upper and lower eyelids. A subtle procedure with significant impact on overall appearance.' },
-  { num: '10', title: 'Non-Surgical Treatments', desc: 'Morpheus8 skin tightening, Renuvion, PRP and exosome hair restoration, and dermal fillers. No downtime, real results.' },
+  { num: '02', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.', href: '/procedures/male-tummy-tuck' },
+  { num: '03', title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions \u2014 an athletic, upward contour rather than a curvier female shape. Often paired with lipo 360 or ab etching.', href: '/procedures/male-butt-lift' },
+  { num: '04', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.' },
 ];
 
 const RESULTS = [
-  { title: 'Gynecomastia Surgery', subtitle: 'Grade 2 - VASER + Gland Excision', label: 'Gynecomastia\nBefore & After' },
   { title: 'Abdominal Etching', subtitle: 'HD Lipo + Ab Definition', label: 'Ab Etching\nBefore & After' },
+  { title: 'Gynecomastia Surgery', subtitle: 'Grade 2 - VASER + Gland Excision', label: 'Gynecomastia\nBefore & After' },
   { title: 'Male Liposuction 360', subtitle: 'Full Torso Contouring', label: 'Male Lipo 360\nBefore & After' },
   { title: 'Male Tummy Tuck', subtitle: 'Abdominoplasty + Lipo', label: 'Male Tummy Tuck\nBefore & After' },
 ];
@@ -156,14 +151,14 @@ export default function HomePage() {
         <div className="wrap">
           <div className="hero-grid">
             <div>
-              <div className="hero-kicker">Male Body Sculpting Specialist</div>
-              <h1>Precision Sculpting for the <em>Modern Man</em></h1>
+              <div className="hero-kicker">AbEtch+ &mdash; Dr. Moein&apos;s Signature Procedure</div>
+              <h1>Los Angeles&apos;s Standard for <em>Abdominal Etching</em></h1>
               <p className="sub">
-                Board-certified cosmetic surgeon <strong>Dr. Babak Moein</strong> combines 20+ years of surgical expertise with advanced VASER and Renuvion technology to sculpt the masculine physique. Beverly Hills, Los Angeles.
+                Board-certified cosmetic surgeon <strong>Dr. Babak Moein</strong> combines HD VASER liposuction with targeted dermal fillers to sharpen muscle definition most surgeons can&apos;t produce. Beverly Hills, Los Angeles.
               </p>
               <div className="cta-row">
-                <a href="#contact" className="btn btn-primary">Book Your Conversation</a>
-                <a href="#results" className="btn btn-outline">View Results</a>
+                <a href="/procedures/abdominal-etching" className="btn btn-primary">Explore Abdominal Etching</a>
+                <a href="#contact" className="btn btn-outline">Book Your Conversation</a>
               </div>
               <div className="trust-row">
                 <div className="trust-item"><ShieldIcon /> Double Board-Certified</div>
@@ -179,7 +174,7 @@ export default function HomePage() {
                   <img
                     className="hero-img"
                     src="/hero-model.jpg"
-                    alt="Male body sculpting results - XYSculptMD"
+                    alt="Abdominal etching results - XYSculptMD"
                     width={800}
                     height={800}
                     loading="eager"
@@ -200,12 +195,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══ SIGNATURE PROCEDURE SPOTLIGHT ═══ */}
+      <ContentRow
+        title="Why Abdominal Etching Is the Procedure He's Built His Practice Around"
+        text="Etching gets you most of the way there, but fillers are how you take it another level, sharpening the muscle definition that etching alone leaves flat. It's a specialized technique, and one Dr. Moein has fully mastered. Few practices in Los Angeles combine HD VASER etching with filler refinement this way, which is exactly what separates a sculpted result from a simply thin one."
+        imageSrc="/hero-model.jpg"
+        imageAlt="Abdominal etching result, HD VASER and filler-refined definition"
+      />
+      <div style={{ textAlign: 'center', marginTop: -24, marginBottom: 56 }}>
+        <a href="/procedures/abdominal-etching" className="btn btn-outline">See the Full Abdominal Etching Procedure</a>
+      </div>
+
       {/* ═══ PROCEDURES ═══ */}
       <section className="procedures" id="procedures">
         <div className="wrap">
-          <div className="section-kicker">Procedures</div>
-          <div className="section-title">Engineered for the <em>Male Body</em></div>
-          <p className="section-desc">Every technique is adapted to the male anatomy. Broader shoulders, thicker skin, different fat distribution. Dr. Moein&apos;s approach accounts for all of it.</p>
+          <div className="section-kicker">Torso Procedures</div>
+          <div className="section-title">Complete Torso <em>Sculpting</em></div>
+          <p className="section-desc">Dr. Moein also specializes in a focused set of torso procedures that pair naturally with abdominal etching. Every technique is adapted to the male anatomy.</p>
           <div className="proc-grid">
             {PROCEDURES.map(proc => (
               proc.href ? (
