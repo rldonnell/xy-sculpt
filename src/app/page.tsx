@@ -209,9 +209,9 @@ export default function HomePage() {
       {/* ═══ PROCEDURES ═══ */}
       <section className="procedures" id="procedures">
         <div className="wrap">
-          <div className="section-kicker">Torso Procedures</div>
-          <div className="section-title">Complete Torso <em>Sculpting</em></div>
-          <p className="section-desc">Dr. Moein also specializes in a focused set of torso procedures that pair naturally with abdominal etching. Every technique is adapted to the male anatomy.</p>
+          <div className="section-kicker">Beyond Abdominal Etching</div>
+          <div className="section-title">The Male <em>Makeover</em></div>
+          <p className="section-desc proc-intro">Abdominal etching is the foundation, but most men want the complete picture: a tighter midsection, a more masculine silhouette, and results that hold up long after recovery. Dr. Moein built the Male Makeover around that goal, pairing etching with the torso procedures that complement it most, often combined in a single session and a single recovery. Below are the four components that make it up.</p>
           <div className="proc-grid">
             {PROCEDURES.map(proc => (
               proc.href ? (

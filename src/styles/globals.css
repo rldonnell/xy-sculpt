@@ -256,6 +256,7 @@ section { padding: 100px 0; position: relative; }
   font-size: 20px; line-height: 1.75;
   color: var(--text-secondary); max-width: 620px;
 }
+.section-desc.proc-intro { max-width: 860px; }
 
 /* ── Divider ── */
 .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
