@@ -51,10 +51,10 @@ const homepageSchema = {
 };
 
 const PROCEDURES = [
-  { num: '01', title: 'Gynecomastia Surgery', desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein\u2019s technique combines gland excision with VASER precision for natural-looking results.', href: '/procedures/gynecomastia' },
-  { num: '02', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.', href: '/procedures/male-tummy-tuck' },
-  { num: '03', title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions \u2014 an athletic, upward contour rather than a curvier female shape. Often paired with lipo 360 or ab etching.', href: '/procedures/male-butt-lift' },
-  { num: '04', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.' },
+  { num: '01', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.', href: '/procedures/male-tummy-tuck' },
+  { num: '02', title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions \u2014 an athletic, upward contour rather than a curvier female shape. Often paired with lipo 360 or ab etching.', href: '/procedures/male-butt-lift' },
+  { num: '03', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.' },
+  { num: '04', title: 'Gynecomastia Surgery', desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein\u2019s technique combines gland excision with VASER precision for natural-looking results.', href: '/procedures/gynecomastia' },
 ];
 
 const RESULTS = [
