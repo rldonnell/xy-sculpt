@@ -15,12 +15,22 @@ const PROCEDURES = [
   {
     title: 'Gynecomastia Surgery',
     desc: 'Restore a flat, masculine chest. Dr. Moein combines liposuction with gland excision for natural results — no visible scarring.',
-    href: '/#procedures',
+    href: '/procedures/gynecomastia',
+  },
+  {
+    title: 'Abdominal Etching',
+    desc: 'HD VASER etching refined with targeted dermal fillers for visible muscle definition — Dr. Moein’s signature procedure.',
+    href: '/procedures/abdominal-etching',
   },
   {
     title: 'Male Tummy Tuck',
     desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.',
-    href: '/#procedures',
+    href: '/procedures/male-tummy-tuck',
+  },
+  {
+    title: 'Male Butt Lift',
+    desc: 'Fat-transfer sculpting calibrated to male proportions — athletic and upward, not curvier feminine volume.',
+    href: '/procedures/male-butt-lift',
   },
   {
     title: 'Body Contouring',

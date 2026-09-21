@@ -31,6 +31,7 @@ const homepageSchema = {
         { '@type': 'MedicalProcedure', name: 'HD Lipo & VASER Body Sculpting', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Abdominal Etching', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Tummy Tuck', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Male Butt Lift', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Liposuction 360', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Skin Tightening (Renuvion)', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Chin & Jaw Definition', procedureType: 'Surgical' },
@@ -49,15 +50,16 @@ const homepageSchema = {
 };
 
 const PROCEDURES = [
-  { num: '01', title: 'Gynecomastia Surgery', desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein\u2019s technique combines gland excision with VASER precision for natural-looking results.' },
+  { num: '01', title: 'Gynecomastia Surgery', desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein\u2019s technique combines gland excision with VASER precision for natural-looking results.', href: '/procedures/gynecomastia' },
   { num: '02', title: 'HD Lipo & VASER', desc: 'High-definition body contouring using ultrasound technology to selectively target fat and reveal underlying muscle structure. Precision sculpting for a lean, athletic physique.' },
-  { num: '03', title: 'Abdominal Etching', desc: 'Sculpt visible six-pack definition by strategically removing fat along the natural lines of your abdominal muscles. The ultimate procedure for men who train hard but cannot achieve full definition.' },
-  { num: '04', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.' },
-  { num: '05', title: 'Skin Tightening', desc: 'Restore a defined jawline and eliminate loose skin. Dr. Moein\u2019s male-specific approach maintains masculine facial structure while reversing visible signs of aging.' },
-  { num: '06', title: 'Chin & Jaw Definition', desc: 'Strengthen facial profile and sharpen the chin and jawline. Surgical and injectable options available for a more commanding, masculine appearance.' },
-  { num: '07', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.' },
-  { num: '08', title: 'Eyelid Surgery', desc: 'Eliminate tired, heavy-looking eyes by removing excess skin and fat from the upper and lower eyelids. A subtle procedure with significant impact on overall appearance.' },
-  { num: '09', title: 'Non-Surgical Treatments', desc: 'Morpheus8 skin tightening, Renuvion, PRP and exosome hair restoration, and dermal fillers. No downtime, real results.' },
+  { num: '03', title: 'Abdominal Etching', desc: 'Sculpt visible six-pack definition by strategically removing fat along the natural lines of your abdominal muscles. The ultimate procedure for men who train hard but cannot achieve full definition.', href: '/procedures/abdominal-etching' },
+  { num: '04', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.', href: '/procedures/male-tummy-tuck' },
+  { num: '05', title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions \u2014 an athletic, upward contour rather than a curvier female shape. Often paired with lipo 360 or ab etching.', href: '/procedures/male-butt-lift' },
+  { num: '06', title: 'Skin Tightening', desc: 'Restore a defined jawline and eliminate loose skin. Dr. Moein\u2019s male-specific approach maintains masculine facial structure while reversing visible signs of aging.' },
+  { num: '07', title: 'Chin & Jaw Definition', desc: 'Strengthen facial profile and sharpen the chin and jawline. Surgical and injectable options available for a more commanding, masculine appearance.' },
+  { num: '08', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.' },
+  { num: '09', title: 'Eyelid Surgery', desc: 'Eliminate tired, heavy-looking eyes by removing excess skin and fat from the upper and lower eyelids. A subtle procedure with significant impact on overall appearance.' },
+  { num: '10', title: 'Non-Surgical Treatments', desc: 'Morpheus8 skin tightening, Renuvion, PRP and exosome hair restoration, and dermal fillers. No downtime, real results.' },
 ];
 
 const RESULTS = [
@@ -206,12 +208,21 @@ export default function HomePage() {
           <p className="section-desc">Every technique is adapted to the male anatomy. Broader shoulders, thicker skin, different fat distribution. Dr. Moein&apos;s approach accounts for all of it.</p>
           <div className="proc-grid">
             {PROCEDURES.map(proc => (
-              <div key={proc.num} className="proc-card">
-                <div className="proc-num">{proc.num}</div>
-                <h3>{proc.title}</h3>
-                <p>{proc.desc}</p>
-                <span className="proc-link">Learn More <ArrowIcon /></span>
-              </div>
+              proc.href ? (
+                <Link key={proc.num} href={proc.href} className="proc-card" style={{ textDecoration: 'none' }}>
+                  <div className="proc-num">{proc.num}</div>
+                  <h3>{proc.title}</h3>
+                  <p>{proc.desc}</p>
+                  <span className="proc-link">Learn More <ArrowIcon /></span>
+                </Link>
+              ) : (
+                <div key={proc.num} className="proc-card">
+                  <div className="proc-num">{proc.num}</div>
+                  <h3>{proc.title}</h3>
+                  <p>{proc.desc}</p>
+                  <span className="proc-link">Learn More <ArrowIcon /></span>
+                </div>
+              )
             ))}
           </div>
         </div>
