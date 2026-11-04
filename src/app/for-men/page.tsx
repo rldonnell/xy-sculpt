@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Why Men Choose XYSculptMD | Male Plastic Surgery',
-  description: 'Discover why more men are choosing XYSculptMD for plastic surgery — a practice designed exclusively around the male anatomy, goals, and experience.',
+  description: 'Discover why more men are choosing XYSculptMD for plastic surgery: a practice designed exclusively around the male anatomy, goals, and experience.',
 };
 
 const REASONS = [
   {
     title: 'Male-Specific Expertise',
-    desc: 'Every procedure is adapted for male anatomy — broader frames, thicker skin, different fat distribution patterns. No cookie-cutter techniques borrowed from female aesthetics.',
+    desc: 'Every procedure is adapted for male anatomy: broader frames, thicker skin, different fat distribution patterns. No cookie-cutter techniques borrowed from female aesthetics.',
   },
   {
     title: 'Discreet & Efficient',
@@ -17,11 +18,11 @@ const REASONS = [
   },
   {
     title: 'Natural-Looking Results',
-    desc: 'Men don\'t want to look "done" — they want to look like themselves, just better. Dr. Moein\'s techniques prioritize subtle, powerful transformation.',
+    desc: 'Men don\'t want to look "done." They want to look like themselves, just better. Dr. Moein\'s techniques prioritize subtle, powerful transformation.',
   },
   {
     title: 'Advanced Technology',
-    desc: 'VASER liposuction, Morpheus8, Renuvion — we use the most advanced tools available to deliver precision results with faster recovery times.',
+    desc: 'VASER liposuction and Renuvion: we use the most advanced tools available to deliver precision results with faster recovery times.',
   },
   {
     title: 'Transparent Pricing',
@@ -59,8 +60,8 @@ export default function ForMenPage() {
           <div className="cta-card">
             <h2>Ready to Take the <em>First Step?</em></h2>
             <p>Schedule a private, no-pressure consultation with Dr. Moein.</p>
-            <a href="tel:+13104558020" className="btn btn-primary">Book Consultation</a>
-            <div className="phone">Or call directly: (310) 455-8020</div>
+            <a href="/contact" className="btn btn-primary">Book Private Consultation</a>
+            <div className="phone">Or call directly: <a href={`tel:${SITE.phone.tel}`}>{SITE.phone.display}</a></div>
           </div>
         </div>
       </section>

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import GHLForm from '@/components/GHLForm';
+import { SITE, addressOneLine } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Contact | XYSculptMD – Male Plastic Surgery',
-  description: 'Schedule a private consultation with Dr. Babak Moein. Contact XYSculptMD in Beverly Hills for male plastic surgery inquiries.',
+  description: 'Schedule a private consultation with Dr. Babak Moein. Contact XYSculptMD in Century City, Los Angeles, for abdominal etching and male body sculpting.',
 };
 
 export default function ContactPage() {
@@ -23,11 +24,11 @@ export default function ContactPage() {
       <div className="contact-info">
         <div className="contact-info__item">
           <h3>Phone</h3>
-          <p><a href="tel:+13104558020" style={{ color: 'var(--accent)' }}>(310) 455-8020</a></p>
+          <p><a href={`tel:${SITE.phone.tel}`} style={{ color: 'var(--accent)' }}>{SITE.phone.display}</a></p>
         </div>
         <div className="contact-info__item">
           <h3>Location</h3>
-          <p>Beverly Hills, California</p>
+          <p>{addressOneLine}</p>
         </div>
         <div className="contact-info__item">
           <h3>Hours</h3>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SITE, addressOneLine } from '@/lib/site';
 
 export default function Footer() {
   return (
@@ -9,49 +10,45 @@ export default function Footer() {
             <div className="brand-mark">
               XY<span>SCULPT</span><span className="brand-md">MD</span>
             </div>
-            <p>Male plastic surgery and body sculpting by Dr. Babak Moein, MD, FACS. Beverly Hills, Los Angeles, CA.</p>
+            <p>The architecture of the male form. Abdominal etching and male body sculpting by {SITE.doctor.withCreds}.</p>
+            <p style={{ marginTop: 12 }}>{addressOneLine}<br /><a href={`tel:${SITE.phone.tel}`}>{SITE.phone.display}</a><br />{SITE.hours}</p>
           </div>
           <div className="footer-col">
-            <h4>Body</h4>
-            <Link href="/procedures">Gynecomastia</Link>
-            <Link href="/procedures">HD Lipo &amp; VASER</Link>
-            <Link href="/procedures">Ab Etching</Link>
-            <Link href="/procedures">Male Tummy Tuck</Link>
-            <Link href="/procedures">Male Lipo 360</Link>
-            <Link href="/procedures">Body Lift</Link>
+            <h4>Procedures</h4>
+            <Link href="/procedures/abdominal-etching">Abdominal Etching</Link>
+            <Link href="/procedures/gynecomastia">Gynecomastia</Link>
+            <Link href="/procedures/male-tummy-tuck">Male Tummy Tuck</Link>
+            <Link href="/procedures/male-tummy-tuck#diastasis-recti">Diastasis Recti Repair</Link>
+            <Link href="/procedures/male-butt-lift">Male Butt Lift</Link>
+            <Link href="/procedures/abdominal-etching#etching-vs-liposuction">Male Lipo 360</Link>
           </div>
           <div className="footer-col">
-            <h4>Face &amp; Neck</h4>
-            <Link href="/procedures">Skin Tightening</Link>
-            <Link href="/procedures">Eyelid Surgery</Link>
-            <Link href="/procedures">Chin &amp; Jaw Definition</Link>
-            <Link href="/procedures">Rhinoplasty</Link>
+            <h4>Learn</h4>
+            <Link href="/blog/six-pack-surgery-los-angeles">Six-Pack Surgery Guide</Link>
+            <Link href="/blog/male-plastic-surgery-los-angeles-guide">Male Plastic Surgery Guide</Link>
+            <Link href="/blog/gynecomastia-surgery-cost-los-angeles">Gynecomastia Cost</Link>
+            <Link href="/blog">All Articles</Link>
           </div>
           <div className="footer-col">
-            <h4>Non-Surgical</h4>
-            <Link href="/procedures">Morpheus8</Link>
-            <Link href="/procedures">Renuvion</Link>
-            <Link href="/procedures">Dermal Fillers</Link>
-            <Link href="/procedures">Hair Restoration</Link>
-            <Link href="/procedures">Exosomes</Link>
-            <Link href="/procedures">PRP Treatment</Link>
+            <h4>Practice</h4>
+            <Link href="/about">About Dr. Moein</Link>
+            <Link href="/gallery">Before &amp; After</Link>
+            <Link href="/for-men">Why Men Choose Us</Link>
+            <Link href="/contact">Book Consultation</Link>
           </div>
           <div className="footer-col">
             <h4>Resources</h4>
-            <a href="#resources">Financing</a>
-            <a href="#resources">Patient Forms</a>
-            <a href="#resources">E-Books &amp; Guides</a>
-            <a href="#resources">Videos</a>
-            <a href="#resources">Traveling Patients</a>
+            <Link href="/#resources">Financing</Link>
+            <Link href="/#resources">Patient Forms</Link>
+            <Link href="/#resources">Traveling Patients</Link>
+            <a href="https://gynecomastiala.com">GynecomastiaLA</a>
           </div>
         </div>
         <div className="footer-bottom">
-          <div className="copy">&copy; {new Date().getFullYear()} XYSculptMD. All rights reserved. A practice of Moein Surgical Arts.</div>
+          <div className="copy">&copy; {new Date().getFullYear()} XYSculptMD. All rights reserved. A practice of Moein Surgical Arts. Content is educational and not medical advice; individual results vary.</div>
           <div className="legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms</Link>
-            <a href="#">HIPAA Notice</a>
-            <a href="#">Sitemap</a>
           </div>
         </div>
       </div>
