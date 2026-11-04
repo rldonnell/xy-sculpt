@@ -172,12 +172,12 @@ export default function HomePage() {
             <div className="hero-visual">
               <div className="hero-image-wrap">
                 <picture>
-                  <source srcSet="/hero-model-mobile.webp" media="(max-width: 600px)" type="image/webp" />
-                  <source srcSet="/hero-model.webp" type="image/webp" />
+                  <source srcSet="/ab-etching-mobile.webp" media="(max-width: 600px)" type="image/webp" />
+                  <source srcSet="/ab-etching.webp" type="image/webp" />
                   <img
                     className="hero-img"
-                    src="/hero-model.jpg"
-                    alt="Abdominal etching result, the architecture of the male form"
+                    src="/ab-etching.jpg"
+                    alt="Abdominal etching result showing defined six-pack and obliques"
                     width={800}
                     height={800}
                     loading="eager"
