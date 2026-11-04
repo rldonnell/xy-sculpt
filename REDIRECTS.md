@@ -27,7 +27,7 @@ Dr. Moein needs to agree to this before step 2. He built xysculpt.com himself.
 | `/procedures/chest-sculpting` | `/procedures/gynecomastia` |
 | `/procedures/tummy-tuck` | `/procedures/male-tummy-tuck` |
 | `/procedures/diastasis-recti-repair` | `/procedures/male-tummy-tuck` (diastasis section) |
-| `/procedures/facial`, `/facelift`, `/chin-augmentation` | `/procedures` (face is out of scope this phase) |
+| `/procedures/facial`, `/facelift`, `/chin-augmentation` | `/procedures/male-facial-rejuvenation` |
 | `/vitality` | `/` (vitality is out of scope this phase) |
 | `/about`, `/gallery`, `/blog`, `/contact` | same path |
 | `/consultation` | `/contact` |
@@ -40,4 +40,4 @@ Also handled: `xsculptmd.com` (typo domain) and `www.xysculptmd.com` both 308 to
 
 ## Open question
 
-Face and vitality URLs could instead go to moeinsurgicalarts.com once that site has matching pages. Revisit during the Moein Surgical Arts consolidation.
+Vitality could instead go to moeinsurgicalarts.com once that site has a matching page. Revisit during the Moein Surgical Arts consolidation.

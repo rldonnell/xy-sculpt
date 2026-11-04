@@ -18,7 +18,7 @@ export default function Footer() {
             <Link href="/procedures/abdominal-etching">Abdominal Etching</Link>
             <Link href="/procedures/gynecomastia">Gynecomastia</Link>
             <Link href="/procedures/male-tummy-tuck">Male Tummy Tuck</Link>
-            <Link href="/procedures/male-tummy-tuck#diastasis-recti">Diastasis Recti Repair</Link>
+            <Link href="/procedures/male-facial-rejuvenation">Male Facial Rejuvenation</Link>
             <Link href="/procedures/male-butt-lift">Male Butt Lift</Link>
             <Link href="/procedures/abdominal-etching#etching-vs-liposuction">Male Lipo 360</Link>
           </div>

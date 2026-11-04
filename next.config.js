@@ -26,10 +26,10 @@ const XYSCULPT_MAP = [
   ['/procedures/chest-sculpting', '/procedures/gynecomastia'],
   ['/procedures/tummy-tuck', '/procedures/male-tummy-tuck'],
   ['/procedures/diastasis-recti-repair', '/procedures/male-tummy-tuck'],
-  // Out of scope this phase (face, vitality). Parked on the procedures index.
-  ['/procedures/facial', '/procedures'],
-  ['/procedures/facelift', '/procedures'],
-  ['/procedures/chin-augmentation', '/procedures'],
+  ['/procedures/facial', '/procedures/male-facial-rejuvenation'],
+  ['/procedures/facelift', '/procedures/male-facial-rejuvenation'],
+  ['/procedures/chin-augmentation', '/procedures/male-facial-rejuvenation'],
+  // Vitality is out of scope this phase.
   ['/vitality', '/'],
 ];
 

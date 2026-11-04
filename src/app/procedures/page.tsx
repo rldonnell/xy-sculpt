@@ -4,14 +4,14 @@ import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Procedures | XYSculptMD – Male Plastic Surgery',
-  description: 'Male body sculpting procedures in Los Angeles: abdominal etching, gynecomastia surgery, male tummy tuck, diastasis recti repair, male butt lift, and Lipo 360.',
+  description: 'Male body sculpting procedures in Los Angeles: abdominal etching, gynecomastia surgery, male tummy tuck, male facial rejuvenation, male butt lift, and Lipo 360.',
 };
 
 const PROCEDURES = [
   { title: 'Abdominal Etching (AbEtch+)', desc: 'HD VASER six-pack sculpting refined with targeted filler for visible muscle definition. Dr. Moein’s signature procedure.', href: '/procedures/abdominal-etching' },
   { title: 'Gynecomastia Surgery', desc: 'Gland excision plus VASER liposuction for a flat, masculine chest, tailored to your grade.', href: '/procedures/gynecomastia' },
   { title: 'Male Tummy Tuck', desc: 'Remove excess skin and repair the abdominal wall for a firmer, flatter midsection, with incisions placed low.', href: '/procedures/male-tummy-tuck' },
-  { title: 'Diastasis Recti Repair', desc: 'Muscle separation repaired by a board certified general surgeon, often through a shorter incision when there is no skin to remove.', href: '/procedures/male-tummy-tuck#diastasis-recti' },
+  { title: 'Male Facial Rejuvenation', desc: 'Minimally invasive procedures that take years off your appearance, define your masculine jawline, and minimize recovery time.', href: '/procedures/male-facial-rejuvenation' },
   { title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions: athletic and upward, not curvier feminine volume.', href: '/procedures/male-butt-lift' },
   { title: 'Male Liposuction 360', desc: 'Full-circumference HD VASER fat removal across the abdomen, flanks, back, and chest for a V-shaped torso. Often paired with etching.', href: '/procedures/abdominal-etching#etching-vs-liposuction' },
 ];

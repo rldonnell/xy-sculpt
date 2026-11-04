@@ -31,6 +31,7 @@ const homepageSchema = {
         { '@type': 'MedicalProcedure', name: 'Diastasis Recti Repair', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Butt Lift', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Liposuction 360', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Male Facial Rejuvenation', procedureType: 'Noninvasive' },
       ],
     },
     physicianSchema,
