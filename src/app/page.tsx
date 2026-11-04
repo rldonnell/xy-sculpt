@@ -1,51 +1,46 @@
 import Link from 'next/link';
 import ContentRow from '@/components/ContentRow';
 import FAQAccordion from '@/components/FAQAccordion';
+import { SITE, physicianSchema } from '@/lib/site';
 
 export const metadata = {
-  title: 'Abdominal Etching Los Angeles | AbEtch+ | XYSculptMD',
-  description: 'Dr. Babak Moein’s signature procedure: HD VASER abdominal etching refined with targeted dermal fillers for visible muscle definition. Beverly Hills, Los Angeles.',
-  alternates: { canonical: 'https://xsculptmd.com' },
+  title: { absolute: 'Abdominal Etching Los Angeles | The Architecture of the Male Form | XYSculptMD' },
+  description: 'Abdominal etching and male body sculpting in Los Angeles by double board certified surgeon Dr. Babak Moein: HD VASER etching refined with filler, gynecomastia, male tummy tuck, and male butt lift.',
+  alternates: { canonical: '/' },
 };
 
 const homepageSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': ['MedicalBusiness', 'CosmeticSurgery'],
-      '@id': 'https://xsculptmd.com/#organization',
-      name: 'XYSculptMD',
-      url: 'https://xsculptmd.com',
-      description: 'Abdominal etching by Dr. Babak Moein, MD, FACS: HD VASER liposuction refined with targeted dermal fillers for visible muscle definition. Also specializing in male tummy tuck, male butt lift, male liposuction 360, and gynecomastia surgery, Beverly Hills.',
-      telephone: '+13104558020',
-      email: 'consult@xsculptmd.com',
+      '@type': ['MedicalBusiness', 'MedicalClinic'],
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: SITE.url,
+      description: 'Abdominal etching and male body sculpting by Dr. Babak Moein, MD, FACS: HD VASER etching refined with filler, plus male tummy tuck, male butt lift, male liposuction 360, and gynecomastia surgery. Century City, Los Angeles.',
+      telephone: SITE.phone.tel,
       priceRange: '$$$$',
       medicalSpecialty: 'PlasticSurgery',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Beverly Hills',
-        addressRegion: 'CA',
-        addressCountry: 'US',
-      },
+      address: physicianSchema.address,
+      employee: { '@id': `${SITE.url}/#physician` },
+      parentOrganization: { '@type': 'MedicalOrganization', name: 'Moein Surgical Arts', url: 'https://moeinsurgicalarts.com' },
       availableService: [
         { '@type': 'MedicalProcedure', name: 'Abdominal Etching', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Gynecomastia Surgery', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Tummy Tuck', procedureType: 'Surgical' },
+        { '@type': 'MedicalProcedure', name: 'Diastasis Recti Repair', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Butt Lift', procedureType: 'Surgical' },
         { '@type': 'MedicalProcedure', name: 'Male Liposuction 360', procedureType: 'Surgical' },
-        { '@type': 'MedicalProcedure', name: 'HD Lipo & VASER Body Sculpting', procedureType: 'Surgical' },
-        { '@type': 'MedicalProcedure', name: 'Skin Tightening (Renuvion)', procedureType: 'Surgical' },
-        { '@type': 'MedicalProcedure', name: 'Chin & Jaw Definition', procedureType: 'Surgical' },
-        { '@type': 'MedicalProcedure', name: 'Eyelid Surgery (Blepharoplasty)', procedureType: 'Surgical' },
-        { '@type': 'MedicalProcedure', name: 'Non-Surgical Treatments (Morpheus8, PRP, Fillers)', procedureType: 'Noninvasive' },
+        { '@type': 'MedicalProcedure', name: 'Male Facial Rejuvenation', procedureType: 'Noninvasive' },
       ],
     },
+    physicianSchema,
     {
       '@type': 'WebSite',
-      '@id': 'https://xsculptmd.com/#website',
-      url: 'https://xsculptmd.com',
-      name: 'XYSculptMD',
-      publisher: { '@id': 'https://xsculptmd.com/#organization' },
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      publisher: { '@id': `${SITE.url}/#organization` },
     },
   ],
 };
@@ -53,7 +48,7 @@ const homepageSchema = {
 const PROCEDURES = [
   { num: '01', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.', href: '/procedures/male-tummy-tuck' },
   { num: '02', title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions \u2014 an athletic, upward contour rather than a curvier female shape. Often paired with lipo 360 or ab etching.', href: '/procedures/male-butt-lift' },
-  { num: '03', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.' },
+  { num: '03', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.', href: '/procedures/abdominal-etching#etching-vs-liposuction' },
   { num: '04', title: 'Gynecomastia Surgery', desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein\u2019s technique combines gland excision with VASER precision for natural-looking results.', href: '/procedures/gynecomastia' },
 ];
 
@@ -71,15 +66,22 @@ const TESTIMONIALS = [
 ];
 
 const FAQ_ITEMS = [
-  { question: 'Is gynecomastia surgery painful?', answer: 'Most patients describe discomfort rather than pain. Dr. Moein offers both awake and general anesthesia options, and the all-inclusive care package includes pain management medication. Most patients return to light activity within a few days.' },
-  { question: 'How long until I see results from HD lipo or ab etching?', answer: 'You will see immediate improvement, but final results develop over 3 to 6 months as swelling subsides and your skin contracts. The combination of VASER and Renuvion accelerates skin tightening for faster visible results.' },
-  { question: 'What makes male plastic surgery different from female?', answer: 'Men have thicker skin, different fat distribution patterns, and distinct aesthetic goals. Male body contouring emphasizes V-shaped torso lines, angular jawlines, and flat chest contours rather than curves.' },
-  { question: 'What does a consultation cost?', answer: 'A small booking fee is required to reserve time with Dr. Moein. During your consultation, you will receive a comprehensive evaluation, a custom treatment plan, and transparent all-inclusive pricing with no hidden fees.' },
-  { question: 'Can I combine multiple procedures?', answer: 'Yes. Many male patients combine procedures for a complete transformation in a single session and recovery period. Common combinations include gynecomastia surgery with ab etching, or lipo 360 with skin tightening.' },
+  { question: 'Is male plastic surgery different from female plastic surgery?', answer: 'Yes, significantly. Male anatomy has different fat distribution, thicker skin, stronger muscle attachments, and different aesthetic ideals: V-shaped torso lines and flat chest contours rather than curves. At XYSculptMD every technique is calibrated to male anatomy, not adapted from female procedures.' },
+  { question: 'How discreet is the consultation process?', answer: 'Completely private. Our Century City location is a professional medical building with private parking and discreet entry. Consultations are one-on-one with Dr. Moein, and all communications are fully confidential.' },
+  { question: 'What is abdominal etching, and am I a candidate?', answer: 'Abdominal etching is high-definition VASER liposuction used as sculpture, revealing the six-pack, obliques, and serratus. Dr. Moein refines the result with targeted filler (AbEtch+). The best candidates are lean-to-athletic men near their goal weight; it is not a weight-loss procedure.' },
+  { question: 'What is recovery like?', answer: 'It depends on the procedure. Most men return to desk work in 5 to 7 days after abdominal etching or gynecomastia surgery, and in 2 to 3 weeks after a tummy tuck. Final results develop over 3 to 6 months as swelling resolves. Dr. Moein provides direct 24/7 access during recovery.' },
+  { question: 'How do I get an accurate price quote?', answer: `During your private consultation, Dr. Moein performs a clinical evaluation and provides an itemized, all-inclusive quote. Abdominal etching starts at $6,500 and gynecomastia surgery at about $4,500. Financing is available through ${SITE.financing}.` },
+  { question: 'Can I combine multiple procedures?', answer: 'Yes. Many men combine procedures for a complete transformation in a single session and recovery period. Common combinations are gynecomastia surgery with ab etching, or Lipo 360 with etching and skin tightening.' },
+];
+
+const INSIGHTS = [
+  { title: 'Six-Pack Surgery: Ab Etching Cost, Results & Recovery', desc: 'What abdominal etching costs in Los Angeles, who is a candidate, and what recovery really looks like.', href: '/blog/six-pack-surgery-los-angeles' },
+  { title: 'Male Plastic Surgery in Los Angeles: The Complete Guide', desc: 'The procedures men ask about most, how they differ from female surgery, and how to choose a surgeon.', href: '/blog/male-plastic-surgery-los-angeles-guide' },
+  { title: 'Male Liposuction in Los Angeles: HD VASER vs. Traditional', desc: 'Why ultrasonic VASER changes what liposuction can do for the male torso.', href: '/blog/male-liposuction-los-angeles' },
 ];
 
 const RESOURCES = [
-  { title: 'Financing', desc: 'We believe cost should never stand between you and the results you want. Flexible payment plans available.', items: ['CareCredit and Prosper Healthcare Lending', '0% interest plans available (with approval)', 'All-inclusive pricing with no hidden fees', 'Free financing consultation'] },
+  { title: 'Financing', desc: 'We believe cost should never stand between you and the results you want. Flexible payment plans available.', items: [`${SITE.financing}`, '0% interest plans available (with approval)', 'All-inclusive pricing with no hidden fees', 'Free financing consultation'] },
   { title: 'Patient Forms', desc: 'Save time on your visit by completing your paperwork in advance. Download, fill out, and bring to your consultation.', items: ['New patient intake form', 'Medical history questionnaire', 'Pre-operative instructions', 'Post-operative care guides'] },
   { title: 'E-Books & Guides', desc: 'Free educational resources to help you understand your options and make an informed decision.', items: ['The Men\u2019s Guide to Body Sculpting', 'Gynecomastia: What Every Man Should Know', 'VASER HD Lipo Explained', 'Recovery Timeline & What to Expect'] },
   { title: 'Videos', desc: 'Watch real procedure explanations, patient testimonials, and behind-the-scenes content from Dr. Moein.', items: ['Procedure walkthrough videos', 'Patient transformation stories', 'Dr. Moein Q&A sessions', 'Technology and technique deep dives'] },
@@ -151,19 +153,20 @@ export default function HomePage() {
         <div className="wrap">
           <div className="hero-grid">
             <div>
-              <div className="hero-kicker">AbEtch+ &mdash; Dr. Moein&apos;s Signature Procedure</div>
-              <h1>Los Angeles&apos;s Standard for <em>Abdominal Etching</em></h1>
+              <div className="hero-kicker">Abdominal Etching &amp; Male Body Sculpting &middot; Los Angeles</div>
+              <h1>The Architecture<br /><em>of the</em> Male Form.</h1>
+              <p className="hero-eyebrow-sub">Los Angeles&apos;s standard for abdominal etching.</p>
               <p className="sub">
-                Board-certified cosmetic surgeon <strong>Dr. Babak Moein</strong> combines HD VASER liposuction with targeted dermal fillers to sharpen muscle definition most surgeons can&apos;t produce. Beverly Hills, Los Angeles.
+                Double board certified surgeon <strong>Dr. Babak Moein</strong> combines HD VASER etching with targeted filler refinement to sharpen muscle definition most surgeons can&apos;t produce. A practice dedicated exclusively to men.
               </p>
               <div className="cta-row">
                 <a href="/procedures/abdominal-etching" className="btn btn-primary">Explore Abdominal Etching</a>
-                <a href="#contact" className="btn btn-outline">Book Your Conversation</a>
+                <a href="/contact" className="btn btn-outline">Book Private Consultation</a>
               </div>
               <div className="trust-row">
-                <div className="trust-item"><ShieldIcon /> Double Board-Certified</div>
-                <div className="trust-item"><ClockIcon /> 20+ Years Experience</div>
-                <div className="trust-item"><PinIcon /> Beverly Hills, CA</div>
+                <div className="trust-item"><ShieldIcon /> Double Board Certified &middot; FACS</div>
+                <div className="trust-item"><ClockIcon /> {SITE.stats.years} Years Experience</div>
+                <div className="trust-item"><PinIcon /> Century City, Los Angeles</div>
               </div>
             </div>
             <div className="hero-visual">
@@ -174,7 +177,7 @@ export default function HomePage() {
                   <img
                     className="hero-img"
                     src="/hero-model.jpg"
-                    alt="Abdominal etching results - XYSculptMD"
+                    alt="Abdominal etching result, the architecture of the male form"
                     width={800}
                     height={800}
                     loading="eager"
@@ -184,11 +187,11 @@ export default function HomePage() {
                 </picture>
               </div>
               <div className="hero-stats-float">
-                <div className="hsf-item"><span className="hsf-num">20+</span><span className="hsf-label">Years</span></div>
+                <div className="hsf-item"><span className="hsf-num">{SITE.stats.years}</span><span className="hsf-label">Years</span></div>
                 <div className="hsf-divider" />
-                <div className="hsf-item"><span className="hsf-num">5,000+</span><span className="hsf-label">Procedures</span></div>
+                <div className="hsf-item"><span className="hsf-num">{SITE.stats.maleProcedures}</span><span className="hsf-label">Male Procedures</span></div>
                 <div className="hsf-divider" />
-                <div className="hsf-item"><span className="hsf-num">4.9</span><span className="hsf-label">Rating</span></div>
+                <div className="hsf-item"><span className="hsf-num">2x</span><span className="hsf-label">Board Certified</span></div>
               </div>
             </div>
           </div>
@@ -256,7 +259,7 @@ export default function HomePage() {
                   <div className="a-step-num">02</div>
                   <div>
                     <h3>Precision Surgery</h3>
-                    <p>Performed in a private, AAAHC-certified surgical center using VASER ultrasound and Renuvion skin tightening. Awake or general anesthesia based on your preference.</p>
+                    <p>Performed at Beverly Century Surgical Center, a private, accredited facility in Century City, using VASER ultrasound and Renuvion skin tightening. Awake or general anesthesia based on your plan.</p>
                   </div>
                 </div>
                 <div className="a-step">
@@ -288,8 +291,8 @@ export default function HomePage() {
                 </div>
                 <div className="tech-item">
                   <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 32, height: 32, color: 'var(--accent)', margin: '0 auto 12px' }}><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" /></svg>
-                  <h4>Morpheus8</h4>
-                  <p>RF microneedling rejuvenation</p>
+                  <h4>Filler Refinement</h4>
+                  <p>AbEtch+ muscle projection</p>
                 </div>
               </div>
             </div>
@@ -348,12 +351,12 @@ export default function HomePage() {
             </div>
             <div className="doctor-content">
               <h3>Dr. Babak Moein, MD, FACS</h3>
-              <div className="title">Board-Certified Cosmetic Surgeon</div>
+              <div className="title">Double Board Certified Surgeon &middot; Dedicated Entirely to Men</div>
               <p className="bio">
-                Dr. Babak Moein is a <strong>double board-certified cosmetic surgeon</strong> and one of the top-ranked body contouring specialists in Los Angeles. With <strong>over 20 years of surgical experience</strong> and more than 5,000 procedures performed, he has developed proprietary techniques for male body sculpting that deliver consistently natural-looking results.
+                Dr. Babak Moein is <strong>double board certified in General Surgery and Cosmetic Surgery</strong>, a Fellow of the American College of Surgeons, and double-fellowship trained in Laparoscopic Minimally Invasive Surgery and Cosmetic Surgery, with <strong>over 20 years of surgical experience</strong>.
               </p>
               <p className="bio">
-                His practice has evolved to become a destination for men seeking expert-level body sculpting, chest contouring, and facial rejuvenation. Dr. Moein personally performs every procedure and provides direct 24/7 access during recovery.
+                XYSculptMD represents a deliberate commitment: surgery focused entirely on men, from a physician who understands the male body, male psychology, and what men want from surgery. Having performed <strong>over 2,000 procedures on male patients</strong>, from HD VASER etching to gynecomastia correction and complete torso transformations, Dr. Moein personally performs every procedure and provides direct 24/7 access during recovery.
               </p>
               <div className="cred-grid">
                 <div className="cred-item">
@@ -377,7 +380,7 @@ export default function HomePage() {
                   <span>AAAHC-Certified Surgery Center</span>
                 </div>
               </div>
-              <a href="#contact" className="btn btn-primary">Learn More About Dr. Moein</a>
+              <a href="/about" className="btn btn-primary">Meet Dr. Moein</a>
             </div>
           </div>
         </div>
@@ -390,7 +393,7 @@ export default function HomePage() {
             <div className="section-kicker" style={{ justifyContent: 'center' }}><span />Why XYSculptMD</div>
             <div className="section-title">Not All Surgeons Understand <em>Men</em></div>
             <p className="section-desc" style={{ margin: '0 auto' }}>
-              Male anatomy requires a fundamentally different approach. Thicker skin, different fat distribution, masculine aesthetic goals. XYSculptMD was built for this.
+              Male anatomy requires a fundamentally different approach: thicker skin, different fat distribution, stronger muscle attachments, masculine aesthetic goals. XYSculptMD was built for this.
             </p>
           </div>
           <div className="diff-box">
@@ -399,17 +402,19 @@ export default function HomePage() {
               <div className="diff-row"><MinusCircleIcon /> Same techniques used for men and women</div>
               <div className="diff-row"><MinusCircleIcon /> Standard liposuction without HD sculpting</div>
               <div className="diff-row"><MinusCircleIcon /> Gynecomastia treated as a side procedure</div>
+              <div className="diff-row"><MinusCircleIcon /> Single board certification, cosmetic only</div>
               <div className="diff-row"><MinusCircleIcon /> Limited male-specific before and after results</div>
-              <div className="diff-row"><MinusCircleIcon /> Office settings designed for female patients</div>
+              <div className="diff-row"><MinusCircleIcon /> Waiting rooms designed for female patients</div>
             </div>
             <div className="diff-vs">VS</div>
             <div className="diff-side us">
               <h4>XYSculptMD</h4>
-              <div className="diff-row"><CheckIcon /> Every technique calibrated for male anatomy</div>
-              <div className="diff-row"><CheckIcon /> VASER + Renuvion for HD muscle definition</div>
+              <div className="diff-row"><CheckIcon /> Every technique and incision plan calibrated for the male body, never adapted from female procedures</div>
+              <div className="diff-row"><CheckIcon /> VASER + Renuvion for HD muscle definition: etched abs, chest borders, back sculpting</div>
               <div className="diff-row"><CheckIcon /> Gynecomastia is a core specialty with hundreds of cases</div>
-              <div className="diff-row"><CheckIcon /> Extensive male-only gallery with graded results</div>
-              <div className="diff-row"><CheckIcon /> Private, discreet environment built for men</div>
+              <div className="diff-row"><CheckIcon /> Double board certified in General and Cosmetic Surgery, FACS</div>
+              <div className="diff-row"><CheckIcon /> Male-only results across every procedure</div>
+              <div className="diff-row"><CheckIcon /> Private parking, discreet entry, and one-on-one consultations in Century City</div>
             </div>
           </div>
         </div>
@@ -432,6 +437,23 @@ export default function HomePage() {
                 <div className="test-author">{t.author}</div>
                 <div className="test-role">{t.role}</div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ INSIGHTS ═══ */}
+      <section className="insights">
+        <div className="wrap">
+          <div className="section-kicker">The Male Aesthetics Journal</div>
+          <div className="section-title">Latest Insights <em>from Dr. Moein</em></div>
+          <div className="insights-grid">
+            {INSIGHTS.map(p => (
+              <Link key={p.href} href={p.href} className="insight-card">
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+                <span className="proc-link">Read Article <ArrowIcon /></span>
+              </Link>
             ))}
           </div>
         </div>
@@ -477,10 +499,10 @@ export default function HomePage() {
       <section className="final-cta" id="contact">
         <div className="wrap">
           <div className="cta-card">
-            <h2>Your Transformation Starts with a <em>Conversation</em></h2>
-            <p>Schedule a private consultation with Dr. Moein. Discuss your goals, see before-and-after results, and get a custom surgical plan with transparent pricing.</p>
-            <a href="tel:+13104558020" className="btn btn-primary">Book Your Conversation</a>
-            <div className="phone">Or call directly: (310) 455-8020</div>
+            <h2>Ready to Look Like the <em>Man You Feel?</em></h2>
+            <p>Schedule a private, no-pressure consultation with Dr. Moein. Discuss your goals, see before-and-after results, and get a custom surgical plan with transparent pricing. Serving Los Angeles, Beverly Hills, Santa Monica, and patients traveling from beyond.</p>
+            <a href="/contact" className="btn btn-primary">Book Private Consultation</a>
+            <div className="phone">Or call directly: <a href={`tel:${SITE.phone.tel}`}>{SITE.phone.display}</a></div>
           </div>
         </div>
       </section>

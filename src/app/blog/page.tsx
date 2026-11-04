@@ -1,62 +1,32 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getPosts, getFeaturedImage, getAuthorName, formatDate, stripHtml } from '@/lib/wordpress';
+import { getPosts, formatDate } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog | XYSculptMD – Male Plastic Surgery',
-  description: 'Expert insights on male plastic surgery, recovery tips, procedure guides, and the latest in aesthetic technology from Dr. Babak Moein.',
+  title: 'The Male Aesthetics Journal | Blog',
+  description: 'Abdominal etching, gynecomastia, male tummy tuck, and male body sculpting guides from double board certified surgeon Dr. Babak Moein.',
+  alternates: { canonical: '/blog' },
 };
 
-export const revalidate = 60;
-
-export default async function BlogPage() {
-  const posts = await getPosts();
-
+export default function BlogPage() {
+  const posts = getPosts();
   return (
     <main>
       <section className="page-hero">
-        <h1>The <em>Blog</em></h1>
-        <p>Expert insights, recovery guides, and the latest in male aesthetics.</p>
+        <h1>The Male Aesthetics <em>Journal</em></h1>
+        <p>Procedure guides, costs, and recovery insights from Dr. Moein.</p>
       </section>
-
       <div className="blog-grid">
-        {posts.length > 0 ? (
-          posts.map((post) => {
-            const image = getFeaturedImage(post);
-            const author = getAuthorName(post);
-            const date = formatDate(post.date);
-            const excerpt = stripHtml(post.excerpt.rendered);
-
-            return (
-              <article key={post.id} className="blog-card">
-                {image && (
-                  <img
-                    src={image}
-                    alt={post.title.rendered}
-                    className="blog-card__image"
-                    loading="lazy"
-                  />
-                )}
-                <div className="blog-card__body">
-                  <h2 className="blog-card__title">
-                    <Link href={`/blog/${post.slug}`}>{post.title.rendered}</Link>
-                  </h2>
-                  <div className="blog-card__meta">{date} · {author}</div>
-                  <p className="blog-card__excerpt">{excerpt}</p>
-                  <Link href={`/blog/${post.slug}`} className="blog-card__link">
-                    Read More →
-                  </Link>
-                </div>
-              </article>
-            );
-          })
-        ) : (
-          <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>
-              Blog posts coming soon. Check back for expert insights from Dr. Moein.
-            </p>
-          </div>
-        )}
+        {posts.map(post => (
+          <article key={post.slug} className="blog-card">
+            <div className="blog-card__body">
+              <div className="blog-card__meta">{post.category} · {formatDate(post.date)}{post.readTime ? ` · ${post.readTime}` : ''}</div>
+              <h2 className="blog-card__title"><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
+              <p className="blog-card__excerpt">{post.description}</p>
+              <Link href={`/blog/${post.slug}`} className="blog-card__link">Read More →</Link>
+            </div>
+          </article>
+        ))}
       </div>
     </main>
   );

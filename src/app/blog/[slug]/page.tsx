@@ -1,51 +1,69 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getAllPostSlugs, getFeaturedImage, getAuthorName, formatDate } from '@/lib/wordpress';
+import { getAllSlugs, getPost, formatDate } from '@/lib/blog';
+import { SITE, physicianSchema } from '@/lib/site';
 
-export const revalidate = 60;
+export const dynamicParams = false;
 
-export async function generateStaticParams() {
-  const slugs = await getAllPostSlugs();
-  return slugs.map((slug) => ({ slug }));
+export function generateStaticParams() {
+  return getAllSlugs().map(slug => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
-  if (!post) return { title: 'Post Not Found | XYSculptMD' };
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const post = getPost(params.slug);
+  if (!post) return { title: 'Post Not Found' };
   return {
-    title: `${post.title.rendered} | XYSculptMD Blog`,
-    description: post.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160),
+    title: post.seoTitle,
+    description: post.description,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: { type: 'article', title: post.title, description: post.description },
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = getPost(params.slug);
   if (!post) notFound();
 
-  const image = getFeaturedImage(post);
-  const author = getAuthorName(post);
-  const date = formatDate(post.date);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.description,
+        datePublished: post.date,
+        author: { '@id': `${SITE.url}/#physician` },
+        publisher: { '@id': `${SITE.url}/#organization` },
+        mainEntityOfPage: `${SITE.url}/blog/${post.slug}`,
+      },
+      physicianSchema,
+    ],
+  };
 
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="page-hero">
-        <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-        <p>{date} · {author}</p>
+        <div className="hero-kicker" style={{ justifyContent: 'center' }}>{post.category}</div>
+        <h1>{post.title}</h1>
+        <p>{formatDate(post.date)}{post.readTime ? ` · ${post.readTime}` : ''}</p>
       </section>
-
       <article className="post">
-        {image && (
-          <img
-            src={image}
-            alt={post.title.rendered}
-            className="post__featured-image"
-          />
-        )}
-        <div
-          className="post__content"
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-        />
+        <div className="post__content" dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
+      <section className="pt-review-wrap" style={{ paddingBottom: 40 }}>
+        <div className="wrap">
+          <div className="pt-review">
+            <div className="pt-review-badge">BM</div>
+            <div>
+              <div className="pt-review-title">Written and medically reviewed by {SITE.doctor.withCreds}</div>
+              <p>Double board certified in General Surgery and Cosmetic Surgery. Fellow, American College of Surgeons.</p>
+              <p className="pt-disclaimer">This article is for educational purposes only and is not medical advice. Individual results vary. All surgical procedures carry risks; a consultation is required before any procedure.</p>
+              <div className="pt-related"><a href="/contact">Schedule a consultation with Dr. Moein &rarr;</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

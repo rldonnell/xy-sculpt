@@ -10,10 +10,7 @@ const GALLERY_ITEMS = [
   { title: 'Gynecomastia Correction', caption: 'Grade II gynecomastia, age 28' },
   { title: 'Male Tummy Tuck', caption: 'Post weight loss, age 42' },
   { title: 'Body Contouring – Full Torso', caption: 'Multi-area sculpting, age 38' },
-  { title: 'Male Facelift', caption: 'Lower face and jawline, age 55' },
-  { title: 'Neck Lift', caption: 'Submental liposuction + platysmaplasty, age 48' },
-  { title: 'Rhinoplasty', caption: 'Dorsal hump reduction, age 31' },
-  { title: 'Morpheus8 – Face', caption: 'Skin tightening, age 44' },
+  { title: 'Abdominal Etching', caption: 'HD VASER etching + filler refinement' },
   { title: 'VASER Liposuction – Chest', caption: 'Hi-def sculpting, age 29' },
 ];
 
@@ -26,7 +23,7 @@ export default function GalleryPage() {
       </section>
 
       <div className="gallery-intro">
-        <p>Browse before-and-after results from XYSculptMD patients. Each case is unique — results shown represent actual surgical outcomes.</p>
+        <p>Browse before-and-after results from XYSculptMD patients. Each case is unique, and results shown represent actual surgical outcomes.</p>
       </div>
 
       <div className="gallery-grid">

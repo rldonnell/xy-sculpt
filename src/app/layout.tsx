@@ -5,11 +5,11 @@ import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'XYSculptMD | Male Plastic Surgery Los Angeles | Dr. Babak Moein',
+    default: 'XYSculptMD | Abdominal Etching & Male Body Sculpting Los Angeles',
     template: '%s | XYSculptMD',
   },
-  description: 'Board-certified cosmetic surgeon Dr. Babak Moein specializes in male plastic surgery, gynecomastia, HD lipo, VASER body sculpting, and facial procedures in Beverly Hills, Los Angeles.',
-  metadataBase: new URL('https://xsculptmd.com'),
+  description: 'Double board certified surgeon Dr. Babak Moein specializes in abdominal etching, gynecomastia, male tummy tuck, and HD VASER body sculpting for men in Century City, Los Angeles.',
+  metadataBase: new URL('https://xysculptmd.com'),
   alternates: {
     canonical: '/',
   },
@@ -17,23 +17,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'XYSculptMD',
-    title: 'XYSculptMD | Male Plastic Surgery Los Angeles',
-    description: 'Precision sculpting for the modern man. Board-certified cosmetic surgeon Dr. Babak Moein — 20+ years experience, Beverly Hills.',
-    url: 'https://xsculptmd.com',
+    title: 'XYSculptMD | The Architecture of the Male Form',
+    description: 'Abdominal etching and male body sculpting in Los Angeles by double board certified surgeon Dr. Babak Moein. 20+ years experience.',
+    url: 'https://xysculptmd.com',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&h=630&fit=crop',
-        width: 1200,
-        height: 630,
+        url: '/hero-model.jpg',
+        width: 800,
+        height: 800,
         alt: 'XYSculptMD - Male Plastic Surgery by Dr. Babak Moein',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'XYSculptMD | Male Plastic Surgery Los Angeles',
-    description: 'Precision sculpting for the modern man. Board-certified cosmetic surgeon Dr. Babak Moein.',
-    images: ['https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1200&h=630&fit=crop'],
+    title: 'XYSculptMD | The Architecture of the Male Form',
+    description: 'Abdominal etching and male body sculpting by double board certified surgeon Dr. Babak Moein.',
+    images: ['/hero-model.jpg'],
   },
   robots: {
     index: true,

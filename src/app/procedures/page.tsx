@@ -1,67 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Procedures | XYSculptMD – Male Plastic Surgery',
-  description: 'Explore our full range of male plastic surgery procedures — liposuction, gynecomastia, tummy tuck, facelift, rhinoplasty, and advanced non-surgical treatments.',
+  description: 'Male body sculpting procedures in Los Angeles: abdominal etching, gynecomastia surgery, male tummy tuck, male facial rejuvenation, male butt lift, and Lipo 360.',
 };
 
 const PROCEDURES = [
-  {
-    title: 'Male Liposuction',
-    desc: 'Precision fat removal sculpted for the male frame. Target the chest, abdomen, flanks, and chin with techniques designed for masculine contours and minimal downtime.',
-    href: '/#procedures',
-  },
-  {
-    title: 'Gynecomastia Surgery',
-    desc: 'Restore a flat, masculine chest. Dr. Moein combines liposuction with gland excision for natural results — no visible scarring.',
-    href: '/procedures/gynecomastia',
-  },
-  {
-    title: 'Abdominal Etching',
-    desc: 'HD VASER etching refined with targeted dermal fillers for visible muscle definition — Dr. Moein’s signature procedure.',
-    href: '/procedures/abdominal-etching',
-  },
-  {
-    title: 'Male Tummy Tuck',
-    desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.',
-    href: '/procedures/male-tummy-tuck',
-  },
-  {
-    title: 'Male Butt Lift',
-    desc: 'Fat-transfer sculpting calibrated to male proportions — athletic and upward, not curvier feminine volume.',
-    href: '/procedures/male-butt-lift',
-  },
-  {
-    title: 'Body Contouring',
-    desc: 'Comprehensive body sculpting that addresses multiple areas in a single session. Ideal after major weight loss or for refining your overall physique.',
-    href: '/#procedures',
-  },
-  {
-    title: 'Male Facelift',
-    desc: 'Tighten sagging skin and redefine the jawline without looking "done." Techniques adapted for male skin thickness and hairline preservation.',
-    href: '/#procedures',
-  },
-  {
-    title: 'Neck Lift',
-    desc: 'Eliminate the double chin and turkey neck. Restore a sharp, defined jawline that conveys strength and vitality.',
-    href: '/#procedures',
-  },
-  {
-    title: 'Rhinoplasty',
-    desc: 'Reshape and refine the nose while maintaining masculine proportions. Functional and aesthetic correction in one procedure.',
-    href: '/#procedures',
-  },
-  {
-    title: 'Morpheus8',
-    desc: 'Radiofrequency microneedling that tightens skin and reduces fat without surgery. Ideal for the face, neck, and body with minimal downtime.',
-    href: '/#procedures',
-  },
-  {
-    title: 'Renuvion',
-    desc: 'Helium plasma skin tightening for areas that need a lift without a full surgical procedure. Often paired with liposuction for enhanced results.',
-    href: '/#procedures',
-  },
+  { title: 'Abdominal Etching (AbEtch+)', desc: 'HD VASER six-pack sculpting refined with targeted filler for visible muscle definition. Dr. Moein’s signature procedure.', href: '/procedures/abdominal-etching' },
+  { title: 'Gynecomastia Surgery', desc: 'Gland excision plus VASER liposuction for a flat, masculine chest, tailored to your grade.', href: '/procedures/gynecomastia' },
+  { title: 'Male Tummy Tuck', desc: 'Remove excess skin and repair the abdominal wall for a firmer, flatter midsection, with incisions placed low.', href: '/procedures/male-tummy-tuck' },
+  { title: 'Male Facial Rejuvenation', desc: 'Minimally invasive procedures that take years off your appearance, define your masculine jawline, and minimize recovery time.', href: '/procedures/male-facial-rejuvenation' },
+  { title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions: athletic and upward, not curvier feminine volume.', href: '/procedures/male-butt-lift' },
+  { title: 'Male Liposuction 360', desc: 'Full-circumference HD VASER fat removal across the abdomen, flanks, back, and chest for a V-shaped torso. Often paired with etching.', href: '/procedures/abdominal-etching#etching-vs-liposuction' },
 ];
 
 export default function ProceduresPage() {
@@ -69,7 +21,7 @@ export default function ProceduresPage() {
     <main>
       <section className="page-hero">
         <h1>Our <em>Procedures</em></h1>
-        <p>Every technique engineered for the male anatomy — broader shoulders, thicker skin, different fat distribution.</p>
+        <p>Every technique engineered for male anatomy: broader frames, thicker skin, different fat distribution.</p>
       </section>
 
       <div className="procedures-grid">
@@ -88,8 +40,8 @@ export default function ProceduresPage() {
           <div className="cta-card">
             <h2>Ready to Explore Your <em>Options?</em></h2>
             <p>Schedule a private consultation to discuss which procedures are right for your goals.</p>
-            <a href="tel:+13104558020" className="btn btn-primary">Book Consultation</a>
-            <div className="phone">Or call directly: (310) 455-8020</div>
+            <a href="/contact" className="btn btn-primary">Book Private Consultation</a>
+            <div className="phone">Or call directly: <a href={`tel:${SITE.phone.tel}`}>{SITE.phone.display}</a></div>
           </div>
         </div>
       </section>
