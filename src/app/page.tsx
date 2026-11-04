@@ -185,6 +185,7 @@ export default function HomePage() {
                     decoding="async"
                   />
                 </picture>
+                <div className="hero-caption">Actual patient of Dr. Moein</div>
               </div>
               <div className="hero-stats-float">
                 <div className="hsf-item"><span className="hsf-num">{SITE.stats.years}</span><span className="hsf-label">Years</span></div>

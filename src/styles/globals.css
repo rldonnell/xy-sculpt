@@ -826,3 +826,10 @@ section { padding: 100px 0; position: relative; }
 .post__content strong { color: var(--text); }
 .post__content a { color: var(--accent); }
 .post__byline { max-width: 750px; margin: 0 auto; padding: 0 24px; font-size: 14px; color: var(--text-muted); }
+.hero-caption {
+  position: absolute; right: 16px; bottom: 16px; z-index: 2;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text); background: rgba(10,11,13,.72);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-accent); border-radius: 4px; padding: 6px 10px;
+}
