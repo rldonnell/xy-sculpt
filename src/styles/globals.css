@@ -826,6 +826,7 @@ section { padding: 100px 0; position: relative; }
 .post__content strong { color: var(--text); }
 .post__content a { color: var(--accent); }
 .post__byline { max-width: 750px; margin: 0 auto; padding: 0 24px; font-size: 14px; color: var(--text-muted); }
+.content-row__image { position: relative; }
 .hero-caption {
   position: absolute; right: 16px; bottom: 16px; z-index: 2;
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;

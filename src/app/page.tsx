@@ -172,12 +172,12 @@ export default function HomePage() {
             <div className="hero-visual">
               <div className="hero-image-wrap">
                 <picture>
-                  <source srcSet="/ab-etching-mobile.webp" media="(max-width: 600px)" type="image/webp" />
-                  <source srcSet="/ab-etching.webp" type="image/webp" />
+                  <source srcSet="/hero-model-mobile.webp" media="(max-width: 600px)" type="image/webp" />
+                  <source srcSet="/hero-model.webp" type="image/webp" />
                   <img
                     className="hero-img"
-                    src="/ab-etching.jpg"
-                    alt="Abdominal etching result showing defined six-pack and obliques"
+                    src="/hero-model.jpg"
+                    alt="The architecture of the male form: defined chest, shoulders and abdomen"
                     width={800}
                     height={800}
                     loading="eager"
@@ -185,7 +185,6 @@ export default function HomePage() {
                     decoding="async"
                   />
                 </picture>
-                <div className="hero-caption">Actual patient of Dr. Moein</div>
               </div>
               <div className="hero-stats-float">
                 <div className="hsf-item"><span className="hsf-num">{SITE.stats.years}</span><span className="hsf-label">Years</span></div>
@@ -203,8 +202,9 @@ export default function HomePage() {
       <ContentRow
         title="Why Abdominal Etching Is the Procedure He's Built His Practice Around"
         text="Etching gets you most of the way there, but fillers are how you take it another level, sharpening the muscle definition that etching alone leaves flat. It's a specialized technique, and one Dr. Moein has fully mastered. Few practices in Los Angeles combine HD VASER etching with filler refinement this way, which is exactly what separates a sculpted result from a simply thin one."
-        imageSrc="/hero-model.jpg"
-        imageAlt="Abdominal etching result, HD VASER and filler-refined definition"
+        imageSrc="/ab-etching.jpg"
+        imageAlt="Abdominal etching result showing defined six-pack and obliques"
+        caption="Actual patient of Dr. Moein"
       />
       <div style={{ textAlign: 'center', marginTop: -24, marginBottom: 56 }}>
         <a href="/procedures/abdominal-etching" className="btn btn-outline">See the Full Abdominal Etching Procedure</a>
