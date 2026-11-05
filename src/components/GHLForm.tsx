@@ -1,57 +1,48 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import Script from 'next/script';
 
 interface GHLFormProps {
   formId?: string;
-  ghlDomain?: string;
+  formName?: string;
   height?: number;
   className?: string;
 }
 
 /**
- * GoHighLevel Form Embed
- * Renders a GHL form via iframe with auto-resize support.
- * Configure via env vars or pass props directly.
+ * GoHighLevel Form Embed (inline layout)
+ * Uses GHL's form_embed.js, which auto-resizes the iframe and passes the
+ * parent page's URL params (utm_*, gclid, fbclid) through to the form.
+ * Form ID can be overridden with NEXT_PUBLIC_GHL_FORM_ID.
  */
 export default function GHLForm({
-  formId = process.env.NEXT_PUBLIC_GHL_FORM_ID || '',
-  ghlDomain = process.env.NEXT_PUBLIC_GHL_DOMAIN || 'api.leadconnectorhq.com',
-  height = 650,
+  formId = process.env.NEXT_PUBLIC_GHL_FORM_ID || 'ycnLuDQA4jpW51aii4Vk',
+  formName = 'XYSculptMD Contact Form',
+  height = 1279,
   className = '',
 }: GHLFormProps) {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== `https://${ghlDomain}`) return;
-      if (event.data?.type === 'resize' && event.data?.height && iframeRef.current) {
-        iframeRef.current.style.height = `${event.data.height}px`;
-      }
-    };
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, [ghlDomain]);
-
-  if (!formId) {
-    return (
-      <div className={className} style={{ padding: '40px', textAlign: 'center', color: '#666' }}>
-        <p>Contact form coming soon. Set NEXT_PUBLIC_GHL_FORM_ID to enable.</p>
-      </div>
-    );
-  }
+  const iframeId = `inline-${formId}`;
 
   return (
     <div className={`ghl-form-wrapper ${className}`}>
       <iframe
-        ref={iframeRef}
-        src={`https://${ghlDomain}/widget/form/${formId}`}
+        src={`https://api.leadconnectorhq.com/widget/form/${formId}`}
+        id={iframeId}
         style={{ width: '100%', height: `${height}px`, border: 'none', borderRadius: '8px' }}
-        loading="lazy"
-        scrolling="no"
-        title="Contact Form"
-        allow="geolocation"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name={formName}
+        data-height={String(height)}
+        data-layout-iframe-id={iframeId}
+        data-form-id={formId}
+        title={formName}
       />
+      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
     </div>
   );
 }
