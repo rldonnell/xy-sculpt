@@ -58,7 +58,7 @@ const RESULTS = [
   { title: 'Male Liposuction 360', subtitle: 'Full Torso Contouring', label: 'Male Lipo 360\nBefore & After', image: '/results/result-01.webp', width: 600, height: 400 },
   { title: 'Male Tummy Tuck', subtitle: 'Abdominoplasty + Lipo', label: 'Male Tummy Tuck\nBefore & After', image: '/results/result-02.webp', width: 600, height: 400 },
   { title: 'Abdominal Etching', subtitle: 'HD Lipo + Ab Definition', label: 'Ab Etching\nBefore & After', image: '/results/result-06.webp', width: 600, height: 400 },
-  { title: 'Male Makeover', subtitle: 'Chest + Full Torso Contouring', label: 'Male Makeover\nResults', image: '/results/result-04.webp', width: 1200, height: 797, alt: 'Male Makeover results, front and side view, XYSculptMD patient' },
+  { title: 'Male Makeover', subtitle: 'Chest + Full Torso Contouring', label: 'Male Makeover\nBefore & After', image: '/results/result-04.webp', width: 1196, height: 796 },
 ];
 
 const TESTIMONIALS = [
@@ -321,7 +321,7 @@ export default function HomePage() {
                 {r.image ? (
                   <img
                     src={r.image}
-                    alt={r.alt ?? `${r.title} before and after, XYSculptMD patient`}
+                    alt={`${r.title} before and after, XYSculptMD patient`}
                     width={r.width}
                     height={r.height}
                     loading="lazy"
