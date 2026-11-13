@@ -53,10 +53,12 @@ const PROCEDURES = [
 ];
 
 const RESULTS = [
-  { title: 'Abdominal Etching', subtitle: 'HD Lipo + Ab Definition', label: 'Ab Etching\nBefore & After' },
-  { title: 'Gynecomastia Surgery', subtitle: 'Grade 2 - VASER + Gland Excision', label: 'Gynecomastia\nBefore & After' },
-  { title: 'Male Liposuction 360', subtitle: 'Full Torso Contouring', label: 'Male Lipo 360\nBefore & After' },
-  { title: 'Male Tummy Tuck', subtitle: 'Abdominoplasty + Lipo', label: 'Male Tummy Tuck\nBefore & After' },
+  { title: 'Abdominal Etching', subtitle: 'HD Lipo + Ab Definition', label: 'Ab Etching\nBefore & After', image: '/results/result-05.webp', width: 768, height: 513 },
+  { title: 'Gynecomastia Surgery', subtitle: 'Grade 2 - VASER + Gland Excision', label: 'Gynecomastia\nBefore & After', image: '/results/result-03.webp', width: 600, height: 400 },
+  { title: 'Male Liposuction 360', subtitle: 'Full Torso Contouring', label: 'Male Lipo 360\nBefore & After', image: '/results/result-01.webp', width: 600, height: 400 },
+  { title: 'Male Tummy Tuck', subtitle: 'Abdominoplasty + Lipo', label: 'Male Tummy Tuck\nBefore & After', image: '/results/result-02.webp', width: 600, height: 400 },
+  { title: 'Abdominal Etching', subtitle: 'HD Lipo + Ab Definition', label: 'Ab Etching\nBefore & After', image: '/results/result-06.webp', width: 600, height: 400 },
+  { title: 'Male Makeover', subtitle: 'Chest + Full Torso Contouring', label: 'Male Makeover\nResults', image: '/results/result-04.webp', width: 1200, height: 797, alt: 'Male Makeover results, front and side view, XYSculptMD patient' },
 ];
 
 const TESTIMONIALS = [
@@ -316,12 +318,22 @@ export default function HomePage() {
           <div className="results-strip">
             {RESULTS.map((r, i) => (
               <div key={i} className="result-card">
-                <div className="result-placeholder">
-                  <div className="icon"><ImagePlaceholderIcon /></div>
-                  {r.label.split('\n').map((line, j) => (
-                    <span key={j}>{line}{j === 0 && <br />}</span>
-                  ))}
-                </div>
+                {r.image ? (
+                  <img
+                    src={r.image}
+                    alt={r.alt ?? `${r.title} before and after, XYSculptMD patient`}
+                    width={r.width}
+                    height={r.height}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="result-placeholder">
+                    <div className="icon"><ImagePlaceholderIcon /></div>
+                    {r.label.split('\n').map((line, j) => (
+                      <span key={j}>{line}{j === 0 && <br />}</span>
+                    ))}
+                  </div>
+                )}
                 <div className="overlay"><h4>{r.title}</h4><p>{r.subtitle}</p></div>
               </div>
             ))}
