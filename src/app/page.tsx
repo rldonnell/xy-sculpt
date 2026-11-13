@@ -53,12 +53,12 @@ const PROCEDURES = [
 ];
 
 const RESULTS = [
-  { title: 'Abdominal Etching', subtitle: 'HD Lipo + Ab Definition', label: 'Ab Etching\nBefore & After', image: '/results/result-05.webp', width: 768, height: 513 },
-  { title: 'Gynecomastia Surgery', subtitle: 'Grade 2 - VASER + Gland Excision', label: 'Gynecomastia\nBefore & After', image: '/results/result-03.webp', width: 600, height: 400 },
-  { title: 'Male Liposuction 360', subtitle: 'Full Torso Contouring', label: 'Male Lipo 360\nBefore & After', image: '/results/result-01.webp', width: 600, height: 400 },
-  { title: 'Male Tummy Tuck', subtitle: 'Abdominoplasty + Lipo', label: 'Male Tummy Tuck\nBefore & After', image: '/results/result-02.webp', width: 600, height: 400 },
-  { title: 'Abdominal Etching', subtitle: 'HD Lipo + Ab Definition', label: 'Ab Etching\nBefore & After', image: '/results/result-06.webp', width: 600, height: 400 },
-  { title: 'Male Makeover', subtitle: 'Chest + Full Torso Contouring', label: 'Male Makeover\nBefore & After', image: '/results/result-04.webp', width: 1196, height: 796 },
+  { alt: 'Ab etching and gynecomastia surgery', image: '/results/ab-etching-gynecomastia-surgery-before-after.webp', width: 1200, height: 802 },
+  { alt: '360 liposuction and tummy tuck, front view', image: '/results/360-liposuction-tummy-tuck-front-before-after.webp', width: 861, height: 887 },
+  { alt: '360 liposuction and tummy tuck, side view', image: '/results/360-liposuction-tummy-tuck-side-before-after.webp', width: 898, height: 887 },
+  { alt: 'Tummy tuck, gynecomastia surgery, and liposuction with ab etching', image: '/results/tummy-tuck-gynecomastia-liposuction-ab-etching-before-after.webp', width: 1200, height: 800 },
+  { alt: 'Ab etching, liposuction, and excess skin removal', image: '/results/ab-etching-liposuction-excess-skin-removal-before-after.webp', width: 1200, height: 800 },
+  { alt: 'Tummy tuck and liposuction', image: '/results/tummy-tuck-liposuction-before-after.webp', width: 1200, height: 800 },
 ];
 
 const TESTIMONIALS = [
@@ -125,14 +125,6 @@ const CheckIcon = () => (
 const MinusCircleIcon = () => (
   <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" style={{ width: 18, height: 18 }}>
     <circle cx="12" cy="12" r="10" /><path d="M8 12h8" />
-  </svg>
-);
-
-const ImagePlaceholderIcon = () => (
-  <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" style={{ width: 20, height: 20 }}>
-    <rect x="3" y="3" width="18" height="18" rx="2" />
-    <circle cx="8.5" cy="8.5" r="1.5" />
-    <path d="M21 15l-5-5L5 21" />
   </svg>
 );
 
@@ -318,23 +310,13 @@ export default function HomePage() {
           <div className="results-strip">
             {RESULTS.map((r, i) => (
               <div key={i} className="result-card">
-                {r.image ? (
-                  <img
-                    src={r.image}
-                    alt={`${r.title} before and after, XYSculptMD patient`}
-                    width={r.width}
-                    height={r.height}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="result-placeholder">
-                    <div className="icon"><ImagePlaceholderIcon /></div>
-                    {r.label.split('\n').map((line, j) => (
-                      <span key={j}>{line}{j === 0 && <br />}</span>
-                    ))}
-                  </div>
-                )}
-                <div className="overlay"><h4>{r.title}</h4><p>{r.subtitle}</p></div>
+                <img
+                  src={r.image}
+                  alt={`${r.alt} before and after, XYSculptMD patient`}
+                  width={r.width}
+                  height={r.height}
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
