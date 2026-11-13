@@ -337,7 +337,8 @@ section { padding: 100px 0; position: relative; }
 /* ── Results Gallery ── */
 .results { background: var(--bg); }
 .results-strip {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  padding: 4px; background: #fff;
   margin-top: 56px; border-radius: var(--radius-lg); overflow: hidden;
 }
 .result-card {
