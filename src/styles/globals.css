@@ -337,11 +337,11 @@ section { padding: 100px 0; position: relative; }
 /* ── Results Gallery ── */
 .results { background: var(--bg); }
 .results-strip {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
   margin-top: 56px; border-radius: var(--radius-lg); overflow: hidden;
 }
 .result-card {
-  background: var(--bg-card); aspect-ratio: 3/4;
+  background: var(--bg-card); aspect-ratio: 3/2;
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center; cursor: pointer;
 }
@@ -351,6 +351,7 @@ section { padding: 100px 0; position: relative; }
   opacity: 0; transition: opacity .4s;
   display: flex; flex-direction: column; justify-content: flex-end; padding: 24px;
 }
+.result-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .result-card:hover .overlay { opacity: 1; }
 .result-card .overlay h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
 .result-card .overlay p { font-size: 12px; color: var(--text-muted); }
@@ -363,7 +364,8 @@ section { padding: 100px 0; position: relative; }
   display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;
 }
 .result-placeholder .icon svg { width: 20px; height: 20px; color: var(--text-muted); }
-@media (max-width: 768px) { .results-strip { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 1024px) { .results-strip { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .results-strip { grid-template-columns: 1fr; } }
 
 /* ── Doctor Section ── */
 .doctor { background: var(--bg-elevated); }
