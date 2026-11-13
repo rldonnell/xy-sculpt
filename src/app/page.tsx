@@ -204,9 +204,9 @@ export default function HomePage() {
       <ContentRow
         title="Why Abdominal Etching Is the Procedure He's Built His Practice Around"
         text="Etching gets you most of the way there, but fillers are how you take it another level, sharpening the muscle definition that etching alone leaves flat. It's a specialized technique, and one Dr. Moein has fully mastered. Few practices in Los Angeles combine HD VASER etching with filler refinement this way, which is exactly what separates a sculpted result from a simply thin one."
-        imageSrc="/ab-etching.jpg"
+        imageSrc="/ab-etching-patient.jpg"
         imageAlt="Abdominal etching result showing defined six-pack and obliques"
-        caption="Actual patient of Dr. Moein"
+        caption="Actual patient of Dr. Moein. AI used to smudge his tattoos."
       />
       <div style={{ textAlign: 'center', marginTop: -24, marginBottom: 56 }}>
         <a href="/procedures/abdominal-etching" className="btn btn-outline">See the Full Abdominal Etching Procedure</a>
