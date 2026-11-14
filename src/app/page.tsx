@@ -167,7 +167,7 @@ export default function HomePage() {
                   <img
                     className="hero-img"
                     src="/hero-model.jpg"
-                    alt="The architecture of the male form: defined chest, shoulders and abdomen"
+                    alt="AI-generated image of a man with a defined chest, shoulders and abdomen; not a real person or patient"
                     width={800}
                     height={800}
                     loading="eager"
@@ -176,7 +176,7 @@ export default function HomePage() {
                   />
                 </picture>
                 <HeroEtch />
-                <div className="hero-caption">Model, not a patient</div>
+                <div className="hero-caption">AI-generated image &middot; Not a real person or patient</div>
               </div>
               <div className="hero-stats-float">
                 <div className="hsf-item"><span className="hsf-num">{SITE.stats.years}</span><span className="hsf-label">Years</span></div>
