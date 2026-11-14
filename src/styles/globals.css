@@ -939,3 +939,27 @@ section { padding: 100px 0; position: relative; }
   .bm-panel { display: flex; flex-direction: column; }
   .bm-detail { order: -1; margin: 0 0 24px; }
 }
+
+/* ── Hero etching overlay (src/components/HeroEtch.tsx) ── */
+.hero-etch { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.he-line {
+  fill: none; stroke: var(--accent-light); stroke-width: 2.2;
+  stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 4px rgba(196,154,108,.55));
+  animation: he-draw 1.4s cubic-bezier(.65,0,.35,1) forwards, he-settle 1.6s ease forwards;
+  animation-delay: calc(.6s + var(--i) * 110ms), calc(3.4s + var(--i) * 40ms);
+}
+.he-node {
+  fill: var(--accent-light); opacity: 0; transform-box: fill-box; transform-origin: center;
+  animation: he-pop .5s ease forwards, he-settle 1.6s ease forwards;
+  animation-delay: calc(1.6s + var(--i) * 160ms), 3.6s;
+}
+/* The photo is drawn at ~350px on phones, so strokes need to be thicker in its 800px space */
+@media (max-width: 600px) { .he-line { stroke-width: 3.6; } .he-node { r: 5.5px; } }
+@keyframes he-draw { to { stroke-dashoffset: 0; } }
+@keyframes he-settle { to { opacity: .45; } }
+@keyframes he-pop { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .he-line, .he-node { animation: none; stroke-dashoffset: 0; opacity: .45; }
+}

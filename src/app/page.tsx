@@ -2,6 +2,7 @@ import Link from 'next/link';
 import ContentRow from '@/components/ContentRow';
 import FAQAccordion from '@/components/FAQAccordion';
 import BodyMap from '@/components/BodyMap';
+import HeroEtch from '@/components/HeroEtch';
 import { SITE, physicianSchema } from '@/lib/site';
 
 export const metadata = {
@@ -173,6 +174,7 @@ export default function HomePage() {
                     decoding="async"
                   />
                 </picture>
+                <HeroEtch />
               </div>
               <div className="hero-stats-float">
                 <div className="hsf-item"><span className="hsf-num">{SITE.stats.years}</span><span className="hsf-label">Years</span></div>
