@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ContentRow from '@/components/ContentRow';
 import FAQAccordion from '@/components/FAQAccordion';
+import BodyMap from '@/components/BodyMap';
 import { SITE, physicianSchema } from '@/lib/site';
 
 export const metadata = {
@@ -44,13 +45,6 @@ const homepageSchema = {
     },
   ],
 };
-
-const PROCEDURES = [
-  { num: '01', title: 'Male Tummy Tuck', desc: 'Remove excess skin and tighten the abdominal wall for a firmer, flatter midsection. Customized for the male frame with incisions designed for minimal visibility.', href: '/procedures/male-tummy-tuck' },
-  { num: '02', title: 'Male Butt Lift', desc: 'Fat-transfer sculpting calibrated to male proportions \u2014 an athletic, upward contour rather than a curvier female shape. Often paired with lipo 360 or ab etching.', href: '/procedures/male-butt-lift' },
-  { num: '03', title: 'Male Liposuction 360', desc: 'Full-circumference fat removal targeting the abdomen, flanks, back, and chest. Creates a proportional, V-shaped torso silhouette with awake or general anesthesia options.', href: '/procedures/abdominal-etching#etching-vs-liposuction' },
-  { num: '04', title: 'Gynecomastia Surgery', desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein\u2019s technique combines gland excision with VASER precision for natural-looking results.', href: '/procedures/gynecomastia' },
-];
 
 const RESULTS = [
   { alt: 'Ab etching and gynecomastia surgery', image: '/results/ab-etching-gynecomastia-surgery-before-after.webp', width: 1200, height: 802 },
@@ -209,26 +203,8 @@ export default function HomePage() {
         <div className="wrap">
           <div className="section-kicker">Beyond Abdominal Etching</div>
           <div className="section-title">The Male <em>Makeover</em></div>
-          <p className="section-desc proc-intro">Abdominal etching is the foundation, but most men want the complete picture: a tighter midsection, a more masculine silhouette, and results that hold up long after recovery. Dr. Moein built the Male Makeover around that goal, pairing etching with the torso procedures that complement it most, often combined in a single session and a single recovery. Below are the four components that make it up.</p>
-          <div className="proc-grid">
-            {PROCEDURES.map(proc => (
-              proc.href ? (
-                <Link key={proc.num} href={proc.href} className="proc-card" style={{ textDecoration: 'none' }}>
-                  <div className="proc-num">{proc.num}</div>
-                  <h3>{proc.title}</h3>
-                  <p>{proc.desc}</p>
-                  <span className="proc-link">Learn More <ArrowIcon /></span>
-                </Link>
-              ) : (
-                <div key={proc.num} className="proc-card">
-                  <div className="proc-num">{proc.num}</div>
-                  <h3>{proc.title}</h3>
-                  <p>{proc.desc}</p>
-                  <span className="proc-link">Learn More <ArrowIcon /></span>
-                </div>
-              )
-            ))}
-          </div>
+          <p className="section-desc proc-intro">Abdominal etching is the foundation, but most men want the complete picture: a tighter midsection, a more masculine silhouette, and results that hold up long after recovery. Dr. Moein built the Male Makeover around that goal, pairing etching with the torso procedures that complement it most, often combined in a single session and a single recovery. Pick an area below to see the procedure that sculpts it.</p>
+          <BodyMap />
         </div>
       </section>
 
