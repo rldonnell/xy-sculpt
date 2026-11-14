@@ -15,22 +15,22 @@ const c: ProcedureContent = {
   kicker: 'AbEtch+ · Dr. Moein’s Signature Procedure',
   h1Lead: 'Abdominal Etching:',
   h1Em: 'The Six-Pack Training Alone Can’t Reveal.',
-  sub: 'HD VASER etching along your own muscle lines, refined with targeted filler for definition most surgeons can’t produce.',
+  sub: 'HD VASER etching along your own muscle lines, refined with targeted filler for definition etching alone can’t reach.',
   quickAnswer:
-    'Abdominal etching is **high-definition VASER liposuction used as sculpture**: fat is selectively removed along the midline and the natural muscle borders to reveal a defined, athletic six-pack, obliques, and serratus. At XYSculptMD in Los Angeles it is performed by Dr. Babak Moein, MD, FACS, a double board certified surgeon dedicated to men. Most men return to desk work in 5 to 7 days, with definition sharpening over 3 months.',
+    'Abdominal etching is **high-definition VASER liposuction used as sculpture**: fat is selectively removed along the midline and the natural muscle borders to reveal a defined, athletic six-pack, obliques, and serratus. At XYSculptMD in Los Angeles it is performed by Dr. Babak Moein, MD, FACS, a board certified general surgeon dedicated to men. Most men return to desk work in 5 to 7 days, with definition sharpening over 3 months.',
   facts: [
     { label: 'Surgeon', value: SITE.doctor.withCreds },
     { label: 'Location', value: SITE.address.facility },
     { label: 'Anesthesia', value: 'General or MAC' },
     { label: 'Desk work', value: '5 to 7 days' },
     { label: 'Final result', value: '3 to 6 months' },
-    { label: 'Starting at', value: '$6,500 all-inclusive' },
+    { label: 'Typical range', value: '$6,500 to $12,000' },
   ],
   sections: [
     {
       title: 'Why this is Dr. Moein’s signature procedure',
       body:
-        'In his own words: etching gets you most of the way there, but filler is how you take it to another level, sharpening the muscle definition that etching alone leaves flat. It is a specialized technique, and one he has fully mastered. Few practices in Los Angeles combine etching with filler refinement this way, which is exactly what makes the result read as *sculpted* rather than simply thin.',
+        'In his own words: etching gets you most of the way there, but filler is how you take it to another level, sharpening the muscle definition that etching alone leaves flat. It is a specialized technique, and one he has made the center of his practice. Combining etching with filler refinement is what makes the result read as *sculpted* rather than simply thin.',
     },
     {
       title: 'What is abdominal etching?',
@@ -51,7 +51,7 @@ const c: ProcedureContent = {
     {
       title: 'Why XYSculptMD for abdominal etching in Los Angeles',
       body:
-        'Dr. Babak Moein, MD, FACS is **double board certified in General Surgery and Cosmetic Surgery**, a Fellow of the American College of Surgeons, and has built XYSculptMD to serve men exclusively. High-definition etching rewards an artist’s eye and a surgeon’s precision, and every result is measured against a natural, masculine standard.',
+        'Dr. Babak Moein, MD, FACS is **board certified in General Surgery**, a Diplomate of the American Board of Cosmetic Surgery, a Fellow of the American College of Surgeons, and has built XYSculptMD to serve men exclusively. High-definition etching rewards an artist’s eye and a surgeon’s precision, and every result is measured against a natural, masculine standard.',
     },
   ],
   cards: {
@@ -94,7 +94,7 @@ const c: ProcedureContent = {
   timeline: RECOVERY.etching.timeline,
   cost: {
     title: 'What Does Abdominal Etching Cost?',
-    body: `Male abdominal etching at XYSculptMD **starts at $6,500 all-inclusive** and typically ranges from about **$6,500 to $12,000**, depending on how many areas are etched and whether skin tightening, filler refinement, or other areas are combined. Your exact quote is set at consultation.\n\nPricing includes the surgeon’s fee, facility, anesthesia, compression garments, and follow-up care. Financing is available through ${SITE.financing}.`,
+    body: `Male abdominal etching at XYSculptMD **typically ranges from $6,500 to $12,000, all-inclusive**, depending on how many areas are etched and whether skin tightening, filler refinement, or other areas are combined. Your exact quote is set at consultation.\n\nPricing includes the surgeon’s fee, facility, anesthesia, compression garments, and follow-up care. Financing is available through ${SITE.financing}.`,
     drivers: [
       { title: 'Areas etched', text: 'Abdomen alone versus abdomen plus obliques, flanks, and serratus for a full high-definition result.' },
       { title: 'Filler refinement', text: 'Adding the AbEtch+ filler or fat-transfer step to build projection into the muscle bellies.' },
@@ -109,7 +109,7 @@ const c: ProcedureContent = {
     { question: 'Will the results look natural?', answer: 'Yes, when the etching follows your own anatomy. Dr. Moein maps your real muscle borders rather than imposing a generic template, and works conservatively so the definition reads as a trained physique, not an obvious “carved” look.' },
     { question: 'Are abdominal etching results permanent?', answer: 'The fat cells removed are gone permanently. The definition lasts as long as you maintain a stable, healthy weight. Significant weight gain can blunt the etched lines because remaining fat cells enlarge, so results are best preserved with consistent training and diet.' },
     { question: 'What is VASER, and why does it matter for etching?', answer: 'VASER uses ultrasonic energy to emulsify fat precisely while sparing surrounding tissue, and it allows controlled work in the superficial layer right under the skin, which is exactly where muscle definition is created. That precision is what makes high-definition etching possible.' },
-    { question: 'How much does abdominal etching cost in Los Angeles?', answer: `At XYSculptMD, male abdominal etching starts at $6,500 all-inclusive and typically ranges from about $6,500 to $12,000, depending on how many areas are etched and whether skin tightening, filler refinement, or other regions are combined. Financing through ${SITE.financing} is available.` },
+    { question: 'How much does abdominal etching cost in Los Angeles?', answer: `At XYSculptMD, male abdominal etching typically ranges from $6,500 to $12,000 all-inclusive, depending on how many areas are etched and whether skin tightening, filler refinement, or other regions are combined. Financing through ${SITE.financing} is available.` },
     { question: 'Can this be combined with other procedures?', answer: 'Yes. It is commonly paired with Male Liposuction 360, gynecomastia surgery, or a male tummy tuck in a single session and a single recovery.' },
     { question: 'How long until I see my six-pack?', answer: 'You will see a difference once the compression phase ends, but the etched lines sharpen as swelling resolves. Expect a clear result by 6 to 8 weeks and the final, crisp definition at 3 to 6 months.' },
   ],

@@ -56,4 +56,4 @@ Cost depends on the approach and whether procedures are combined, and is quoted 
 
 ## Talk to a Male-Exclusive Cosmetic Surgeon
 
-Dr. Babak Moein, MD, FACS is double board certified in General Surgery and Cosmetic Surgery, a Fellow of the American College of Surgeons, and operates exclusively on male patients at XYSculptMD in Los Angeles. To map the right chest plan for your goals, [schedule a private consultation](/contact).
+Dr. Babak Moein, MD, FACS is board certified in General Surgery, a Diplomate of the American Board of Cosmetic Surgery, a Fellow of the American College of Surgeons, and operates exclusively on male patients at XYSculptMD in Los Angeles. To map the right chest plan for your goals, [schedule a private consultation](/contact).

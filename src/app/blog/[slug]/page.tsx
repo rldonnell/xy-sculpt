@@ -57,7 +57,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <div className="pt-review-badge">BM</div>
             <div>
               <div className="pt-review-title">Written and medically reviewed by {SITE.doctor.withCreds}</div>
-              <p>Double board certified in General Surgery and Cosmetic Surgery. Fellow, American College of Surgeons.</p>
+              <p>Board certified in General Surgery; Diplomate, American Board of Cosmetic Surgery. Fellow, American College of Surgeons.</p>
               <p className="pt-disclaimer">This article is for educational purposes only and is not medical advice. Individual results vary. All surgical procedures carry risks; a consultation is required before any procedure.</p>
               <div className="pt-related"><a href="/contact">Schedule a consultation with Dr. Moein &rarr;</a></div>
             </div>

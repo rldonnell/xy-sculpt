@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Dr. Moein | XYSculptMD – Male Plastic Surgery',
-  description: 'Dr. Babak Moein, MD, FACS: double board certified in General and Cosmetic Surgery, 20+ years of experience, over 2,000 male procedures. Century City, Los Angeles.',
+  description: 'Dr. Babak Moein, MD, FACS: board certified in General Surgery and a Diplomate of the American Board of Cosmetic Surgery, 20+ years of experience, over 2,000 male procedures. Century City, Los Angeles.',
 };
 
 export default function AboutPage() {
@@ -10,13 +10,13 @@ export default function AboutPage() {
     <main>
       <section className="page-hero">
         <h1>About Dr. Babak <em>Moein</em></h1>
-        <p>Double board certified surgeon, dedicated entirely to men.</p>
+        <p>Board certified general surgeon, dedicated entirely to men.</p>
       </section>
 
       <div className="about-content">
         <h2>A Career Dedicated to Male Aesthetics</h2>
         <p>
-          Dr. Babak Moein, MD, FACS is double board certified in General Surgery and Cosmetic Surgery, a Fellow of the American
+          Dr. Babak Moein, MD, FACS is board certified in General Surgery, a Diplomate of the American Board of Cosmetic Surgery, a Fellow of the American
           College of Surgeons, and double-fellowship trained in Laparoscopic Minimally Invasive Surgery and Cosmetic Surgery, with
           over 20 years of surgical experience. Having performed over 2,000 procedures on male patients, he brings deep male-specific
           surgical expertise to every consultation and operation.
@@ -30,7 +30,7 @@ export default function AboutPage() {
 
         <h2>Education &amp; Credentials</h2>
         <p>
-          Dr. Moein is certified by both the American Board of General Surgery and the American Board of Cosmetic Surgery, and is a
+          Dr. Moein is board certified in General Surgery, a Diplomate of the American Board of Cosmetic Surgery, and a
           Fellow of the American College of Surgeons. His general-surgery training matters most in abdominal wall work such as
           diastasis recti and hernia repair; his cosmetic training shapes what the result looks like afterward.
         </p>

@@ -44,7 +44,7 @@ const c: ProcedureContent = {
     {
       title: 'Why XYSculptMD for facial rejuvenation',
       body:
-        'Dr. Babak Moein, MD, FACS is **double board certified in General Surgery and Cosmetic Surgery** and a Fellow of the American College of Surgeons. He performs these treatments himself, and pairs them with the same VASER and Renuvion technology he uses for body sculpting. Many men add neck and jawline work to an abdominal etching or gynecomastia plan, so the face matches the body.',
+        'Dr. Babak Moein, MD, FACS is **board certified in General Surgery**, a Diplomate of the American Board of Cosmetic Surgery, and a Fellow of the American College of Surgeons. He performs these treatments himself, and pairs them with the same VASER and Renuvion technology he uses for body sculpting. Many men add neck and jawline work to an abdominal etching or gynecomastia plan, so the face matches the body.',
     },
   ],
   cards: {
