@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ProcedureTemplate, { type ProcedureContent } from '@/components/ProcedureTemplate';
 import { SITE } from '@/lib/site';
+import { RECOVERY } from '@/lib/recovery';
 
 export const metadata: Metadata = {
   title: 'Gynecomastia Surgery Los Angeles | Male Breast Reduction',
@@ -81,13 +82,7 @@ const c: ProcedureContent = {
     'Those with excess chest fat unresponsive to exercise',
     'Men with skin laxity needing periareolar or extended correction',
   ],
-  timeline: [
-    { when: 'Days 1 to 3', text: 'Rest at home. Compression vest worn 24/7. Mild soreness managed with medication; light walking encouraged.' },
-    { when: 'Days 5 to 7', text: 'Most men return to desk work and driving (once off prescription pain medication).' },
-    { when: 'Weeks 2 to 4', text: 'Light activity resumes. Swelling steadily subsides and the chest contour begins to settle.' },
-    { when: 'Weeks 4 to 6', text: 'Gradual return to chest and upper-body workouts. Compression vest typically worn through week 6.' },
-    { when: '3 to 6 months', text: 'Final contour and full skin retraction; incision lines continue to fade.' },
-  ],
+  timeline: RECOVERY.gynecomastia.timeline,
   cost: {
     title: 'What Does Gynecomastia Surgery Cost?',
     body: `Gynecomastia surgery at XYSculptMD **starts at approximately $4,500** and ranges to **$12,500+, all-inclusive**, depending on grade and technique. Pricing includes the surgeon’s fee, facility, anesthesia, compression garments, and one year of follow-up care. Your exact quote is set at consultation after your grade is assessed. Financing is available through ${SITE.financing}.`,

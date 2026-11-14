@@ -3,6 +3,7 @@ import ContentRow from '@/components/ContentRow';
 import FAQAccordion from '@/components/FAQAccordion';
 import BodyMap from '@/components/BodyMap';
 import HeroEtch from '@/components/HeroEtch';
+import RecoveryTimeline from '@/components/RecoveryTimeline';
 import { SITE, physicianSchema } from '@/lib/site';
 
 export const metadata = {
@@ -270,6 +271,16 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ RECOVERY TIMELINE ═══ */}
+      <section className="recovery" id="recovery">
+        <div className="wrap">
+          <div className="section-kicker">Recovery, Mapped</div>
+          <div className="section-title">Your Recovery, <em>Week by Week</em></div>
+          <p className="section-desc">Choose a procedure and drag through the first year to see where most men are at each point: back at the desk, back in the gym, and when the final result shows.</p>
+          <RecoveryTimeline />
         </div>
       </section>
 

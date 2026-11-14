@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ProcedureTemplate, { type ProcedureContent } from '@/components/ProcedureTemplate';
 import { SITE } from '@/lib/site';
+import { RECOVERY } from '@/lib/recovery';
 
 export const metadata: Metadata = {
   title: 'Abdominal Etching Los Angeles | AbEtch+ Six-Pack Surgery',
@@ -90,13 +91,7 @@ const c: ProcedureContent = {
     'Those who want the midline, obliques, and serratus defined together',
     'Men who want etching combined with chest or flank contouring',
   ],
-  timeline: [
-    { when: 'Days 1 to 3', text: 'Rest with the compression garment and foam in place. Soreness and drainage are expected and normal.' },
-    { when: 'Days 5 to 7', text: 'Most men return to desk work. Compression is worn 24/7.' },
-    { when: 'Weeks 2 to 3', text: 'Light cardio and daily activity resume as cleared; swelling begins to settle.' },
-    { when: 'Weeks 4 to 6', text: 'Compression steps down, with a gradual return to core and full training around six weeks.' },
-    { when: '3 to 6 months', text: 'Final definition emerges as deep swelling fully resolves and the etched lines sharpen.' },
-  ],
+  timeline: RECOVERY.etching.timeline,
   cost: {
     title: 'What Does Abdominal Etching Cost?',
     body: `Male abdominal etching at XYSculptMD **starts at $6,500 all-inclusive** and typically ranges from about **$6,500 to $12,000**, depending on how many areas are etched and whether skin tightening, filler refinement, or other areas are combined. Your exact quote is set at consultation.\n\nPricing includes the surgeon’s fee, facility, anesthesia, compression garments, and follow-up care. Financing is available through ${SITE.financing}.`,
