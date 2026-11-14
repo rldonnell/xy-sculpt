@@ -346,7 +346,8 @@ section { padding: 100px 0; position: relative; }
   position: relative; overflow: hidden;
 }
 .result-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-.results-note { margin-top: 14px; text-align: center; font-size: 13px; font-style: italic; color: var(--text-secondary); }
+.results-vary { margin-top: 18px; text-align: center; font-size: 15px; font-weight: 600; color: var(--text); }
+.results-note { margin-top: 6px; text-align: center; font-size: 13px; font-style: italic; color: var(--text-secondary); }
 @media (max-width: 640px) { .results-strip { grid-template-columns: 1fr; } }
 
 /* ── Doctor Section ── */

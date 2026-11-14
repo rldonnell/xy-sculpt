@@ -45,7 +45,7 @@ Both are reviewed at consultation so you can choose the approach that fits your 
 
 ## Is It Safe?
 
-The biostimulatory fillers used, AlloClae, Sculptra, and Radiesse, are well-established injectables with a proven record of safety and effectiveness. Just as important, this is a **physician procedure** performed by Dr. Moein, who is double board certified and confirms your candidacy and reviews the plan with you before treatment. It is not a medspa add-on.
+The biostimulatory fillers used, AlloClae, Sculptra, and Radiesse, are well-established injectables with a proven record of safety and effectiveness. Just as important, this is a **physician procedure** performed by Dr. Moein, who is board certified in General Surgery and confirms your candidacy and reviews the plan with you before treatment. It is not a medspa add-on.
 
 ## How Long Do Results Last?
 
@@ -64,4 +64,4 @@ The in-office filler approach typically involves only 1 to 3 days of downtime, w
 
 ## Talk to a Male-Exclusive Cosmetic Surgeon
 
-Dr. Babak Moein, MD, FACS is double board certified in General Surgery and Cosmetic Surgery, a Fellow of the American College of Surgeons, and operates exclusively on male patients at XYSculptMD in Los Angeles. To find out whether a non-surgical six-pack fits your anatomy and goals, [schedule a private consultation](/contact).
+Dr. Babak Moein, MD, FACS is board certified in General Surgery, a Diplomate of the American Board of Cosmetic Surgery, a Fellow of the American College of Surgeons, and operates exclusively on male patients at XYSculptMD in Los Angeles. To find out whether a non-surgical six-pack fits your anatomy and goals, [schedule a private consultation](/contact).

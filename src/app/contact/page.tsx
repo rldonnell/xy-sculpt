@@ -32,7 +32,7 @@ export default function ContactPage() {
         </div>
         <div className="contact-info__item">
           <h3>Hours</h3>
-          <p>Mon – Fri: 9am – 5pm</p>
+          <p>{SITE.hours}</p>
         </div>
       </div>
     </main>

@@ -4,7 +4,7 @@ import { getPosts, formatDate } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'The Male Aesthetics Journal | Blog',
-  description: 'Abdominal etching, gynecomastia, male tummy tuck, and male body sculpting guides from double board certified surgeon Dr. Babak Moein.',
+  description: 'Abdominal etching, gynecomastia, male tummy tuck, and male body sculpting guides from board certified general surgeon Dr. Babak Moein.',
   alternates: { canonical: '/blog' },
 };
 

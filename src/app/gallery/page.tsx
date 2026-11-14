@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Results Gallery | XYSculptMD – Male Plastic Surgery',
-  description: 'View before and after results from real XYSculptMD patients. See the transformations achieved by Dr. Moein.',
+  description: 'Before and after results from XYSculptMD are coming soon.',
+  // Placeholder page: keep it out of search until real, consented photos are in.
+  robots: { index: false, follow: true },
 };
 
 const GALLERY_ITEMS = [
@@ -19,11 +21,11 @@ export default function GalleryPage() {
     <main>
       <section className="page-hero">
         <h1>Results <em>Gallery</em></h1>
-        <p>Real patients. Real results. Every transformation backed by surgical precision.</p>
+        <p>Before-and-after photos are coming soon.</p>
       </section>
 
       <div className="gallery-intro">
-        <p>Browse before-and-after results from XYSculptMD patients. Each case is unique, and results shown represent actual surgical outcomes.</p>
+        <p>This gallery is being prepared. Every case will name the procedures performed, and individual results vary.</p>
       </div>
 
       <div className="gallery-grid">

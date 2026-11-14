@@ -4,7 +4,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Gynecomastia Surgery Los Angeles | Male Breast Reduction',
-  description: 'Gynecomastia surgery in Los Angeles for all grades: gland excision plus VASER liposuction by double board certified surgeon Dr. Babak Moein. Cost, grades, recovery.',
+  description: 'Gynecomastia surgery in Los Angeles for all grades: gland excision plus VASER liposuction by board certified general surgeon Dr. Babak Moein. Cost, grades, recovery.',
   alternates: { canonical: '/procedures/gynecomastia' },
 };
 
@@ -23,7 +23,7 @@ const c: ProcedureContent = {
     { label: 'Anesthesia', value: 'General or MAC' },
     { label: 'Surgery time', value: '1 to 2 hours' },
     { label: 'Desk work', value: '5 to 7 days' },
-    { label: 'Starting at', value: '$4,500 all-inclusive' },
+    { label: 'Typical range', value: '$4,500 to $12,500+' },
   ],
   sections: [
     {
@@ -44,7 +44,7 @@ const c: ProcedureContent = {
     {
       title: 'Why XYSculptMD for gynecomastia in Los Angeles',
       body:
-        'Dr. Babak Moein, MD, FACS is **double board certified in General Surgery and Cosmetic Surgery**, a Fellow of the American College of Surgeons, and has performed hundreds of gynecomastia procedures across all grades, from a mild glandular button to severe cases requiring skin work. Gynecomastia is such a core focus that he runs a dedicated specialist site, **[GynecomastiaLA.com](https://gynecomastiala.com)**, with grade-by-grade galleries and in-depth guides.',
+        'Dr. Babak Moein, MD, FACS is **board certified in General Surgery**, a Diplomate of the American Board of Cosmetic Surgery, a Fellow of the American College of Surgeons, and has performed hundreds of gynecomastia procedures across all grades, from a mild glandular button to severe cases requiring skin work. Gynecomastia is such a core focus that he runs a dedicated specialist site, **[GynecomastiaLA.com](https://gynecomastiala.com)**, with grade-by-grade galleries and in-depth guides.',
     },
   ],
   cards: {
@@ -90,7 +90,7 @@ const c: ProcedureContent = {
   ],
   cost: {
     title: 'What Does Gynecomastia Surgery Cost?',
-    body: `Gynecomastia surgery at XYSculptMD **starts at approximately $4,500** and ranges to **$12,500+, all-inclusive**, depending on grade and technique. Pricing includes the surgeon’s fee, facility, anesthesia, compression garments, and one year of follow-up care. Your exact quote is set at consultation after your grade is assessed. Financing is available through ${SITE.financing}.`,
+    body: `Gynecomastia surgery at XYSculptMD **typically ranges from about $4,500 to $12,500+, all-inclusive**, depending on grade and technique. Pricing includes the surgeon’s fee, facility, anesthesia, compression garments, and one year of follow-up care. Your exact quote is set at consultation after your grade is assessed. Financing is available through ${SITE.financing}.`,
     drivers: [
       { title: 'Grade & technique', text: 'Grade I to II is the most straightforward; Grade III to IV with skin work is more complex.' },
       { title: 'VASER component', text: 'Cases needing VASER for a fatty component in addition to gland excision cost more but produce a better contour.' },
@@ -101,7 +101,7 @@ const c: ProcedureContent = {
     { question: 'Is it fat or gynecomastia?', answer: 'True gynecomastia is firm glandular tissue that does not shrink with diet or exercise and usually requires surgical removal. Pseudogynecomastia is soft chest fat, which can improve with fat reduction alone. Dr. Moein distinguishes the two with a clinical exam, and the difference changes the treatment entirely.' },
     { question: 'Is gynecomastia surgery painful?', answer: 'Most patients describe discomfort rather than pain. Both general anesthesia and monitored anesthesia care are available, and pain is managed with medication. Most men return to light activity within a few days.' },
     { question: 'Is gynecomastia surgery covered by insurance?', answer: 'Sometimes, but usually not. Insurers may cover it when it is medically necessary, with documented pain, skin breakdown, or confirmed glandular tissue, but cosmetic and pseudogynecomastia cases are typically not covered. Our team can help with medical-necessity documentation.' },
-    { question: 'How much does gynecomastia surgery cost in Los Angeles?', answer: `At XYSculptMD, gynecomastia surgery starts around $4,500 and ranges to $12,500+ all-inclusive, depending on grade and whether VASER liposuction and skin tightening are needed. Financing through ${SITE.financing} is available.` },
+    { question: 'How much does gynecomastia surgery cost in Los Angeles?', answer: `At XYSculptMD, gynecomastia surgery typically ranges from about $4,500 to $12,500+ all-inclusive, depending on grade and whether VASER liposuction and skin tightening are needed. Financing through ${SITE.financing} is available.` },
     { question: 'Will gynecomastia come back after surgery?', answer: 'Recurrence is rare once glandular tissue is removed, because gland does not regenerate. It can return if driven by ongoing factors: significant weight gain, certain medications, anabolic steroids, or a new hormonal imbalance.' },
     { question: 'Will there be visible scars?', answer: 'Incisions are small and placed at the natural border of the areola, where they heal discreetly. Higher grades that require skin removal involve additional incisions, which Dr. Moein plans to stay as hidden as possible.' },
     { question: 'When can I work out again?', answer: 'Light activity and walking start immediately. Most men resume general exercise at 2 to 3 weeks and chest training gradually from 4 to 6 weeks, once cleared at follow-up.' },

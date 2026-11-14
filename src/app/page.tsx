@@ -7,7 +7,7 @@ import { SITE, physicianSchema } from '@/lib/site';
 
 export const metadata = {
   title: { absolute: 'Abdominal Etching Los Angeles | The Architecture of the Male Form | XYSculptMD' },
-  description: 'Abdominal etching and male body sculpting in Los Angeles by double board certified surgeon Dr. Babak Moein: HD VASER etching refined with filler, gynecomastia, male tummy tuck, and male butt lift.',
+  description: 'Abdominal etching and male body sculpting in Los Angeles by board certified general surgeon Dr. Babak Moein: HD VASER etching refined with filler, gynecomastia, male tummy tuck, and male butt lift.',
   alternates: { canonical: '/' },
 };
 
@@ -67,7 +67,7 @@ const FAQ_ITEMS = [
   { question: 'How discreet is the consultation process?', answer: 'Completely private. Our Century City location is a professional medical building with private parking and discreet entry. Consultations are one-on-one with Dr. Moein, and all communications are fully confidential.' },
   { question: 'What is abdominal etching, and am I a candidate?', answer: 'Abdominal etching is high-definition VASER liposuction used as sculpture, revealing the six-pack, obliques, and serratus. Dr. Moein refines the result with targeted filler (AbEtch+). The best candidates are lean-to-athletic men near their goal weight; it is not a weight-loss procedure.' },
   { question: 'What is recovery like?', answer: 'It depends on the procedure. Most men return to desk work in 5 to 7 days after abdominal etching or gynecomastia surgery, and in 2 to 3 weeks after a tummy tuck. Final results develop over 3 to 6 months as swelling resolves. Dr. Moein provides direct 24/7 access during recovery.' },
-  { question: 'How do I get an accurate price quote?', answer: `During your private consultation, Dr. Moein performs a clinical evaluation and provides an itemized, all-inclusive quote. Abdominal etching starts at $6,500 and gynecomastia surgery at about $4,500. Financing is available through ${SITE.financing}.` },
+  { question: 'How do I get an accurate price quote?', answer: `During your private consultation, Dr. Moein performs a clinical evaluation and provides an itemized, all-inclusive quote. Abdominal etching typically ranges from $6,500 to $12,000, and gynecomastia surgery from about $4,500 to $12,500+, depending on the areas treated, the grade, and the technique. Financing is available through ${SITE.financing}.` },
   { question: 'Can I combine multiple procedures?', answer: 'Yes. Many men combine procedures for a complete transformation in a single session and recovery period. Common combinations are gynecomastia surgery with ab etching, or Lipo 360 with etching and skin tightening.' },
 ];
 
@@ -144,16 +144,16 @@ export default function HomePage() {
             <div>
               <div className="hero-kicker">Abdominal Etching &amp; Male Body Sculpting &middot; Los Angeles</div>
               <h1>The Architecture<br /><em>of the</em> Male Form.</h1>
-              <p className="hero-eyebrow-sub">Los Angeles&apos;s standard for abdominal etching.</p>
+              <p className="hero-eyebrow-sub">A Los Angeles practice built around abdominal etching.</p>
               <p className="sub">
-                Double board certified surgeon <strong>Dr. Babak Moein</strong> combines HD VASER etching with targeted filler refinement to sharpen muscle definition most surgeons can&apos;t produce. A practice dedicated exclusively to men.
+                Board certified general surgeon <strong>Dr. Babak Moein</strong> combines HD VASER etching with targeted filler refinement to sharpen muscle definition beyond what etching alone can reach. A practice dedicated exclusively to men.
               </p>
               <div className="cta-row">
                 <a href="/procedures/abdominal-etching" className="btn btn-primary">Explore Abdominal Etching</a>
                 <a href="/contact" className="btn btn-outline">Book Private Consultation</a>
               </div>
               <div className="trust-row">
-                <div className="trust-item"><ShieldIcon /> Double Board Certified &middot; FACS</div>
+                <div className="trust-item"><ShieldIcon /> Board Certified General Surgeon &middot; FACS</div>
                 <div className="trust-item"><ClockIcon /> {SITE.stats.years} Years Experience</div>
                 <div className="trust-item"><PinIcon /> Century City, Los Angeles</div>
               </div>
@@ -175,13 +175,14 @@ export default function HomePage() {
                   />
                 </picture>
                 <HeroEtch />
+                <div className="hero-caption">Model, not a patient</div>
               </div>
               <div className="hero-stats-float">
                 <div className="hsf-item"><span className="hsf-num">{SITE.stats.years}</span><span className="hsf-label">Years</span></div>
                 <div className="hsf-divider" />
                 <div className="hsf-item"><span className="hsf-num">{SITE.stats.maleProcedures}</span><span className="hsf-label">Male Procedures</span></div>
                 <div className="hsf-divider" />
-                <div className="hsf-item"><span className="hsf-num">2x</span><span className="hsf-label">Board Certified</span></div>
+                <div className="hsf-item"><span className="hsf-num">FACS</span><span className="hsf-label">Fellow, ACS</span></div>
               </div>
             </div>
           </div>
@@ -191,10 +192,10 @@ export default function HomePage() {
       {/* ═══ SIGNATURE PROCEDURE SPOTLIGHT ═══ */}
       <ContentRow
         title="Why Abdominal Etching Is the Procedure He's Built His Practice Around"
-        text="Etching gets you most of the way there, but fillers are how you take it another level, sharpening the muscle definition that etching alone leaves flat. It's a specialized technique, and one Dr. Moein has fully mastered. Few practices in Los Angeles combine HD VASER etching with filler refinement this way, which is exactly what separates a sculpted result from a simply thin one."
+        text="Etching gets you most of the way there, but fillers are how you take it another level, sharpening the muscle definition that etching alone leaves flat. It's a specialized technique, and one Dr. Moein has made the center of his practice. Combining HD VASER etching with filler refinement is what separates a sculpted result from a simply thin one."
         imageSrc="/ab-etching-patient.jpg"
         imageAlt="Abdominal etching result showing defined six-pack and obliques"
-        caption="Actual patient of Dr. Moein. AI used to smudge his tattoos."
+        caption="Actual patient, abdominal etching. Tattoos obscured with AI. Individual results vary."
       />
       <div style={{ textAlign: 'center', marginTop: -24, marginBottom: 56 }}>
         <a href="/procedures/abdominal-etching" className="btn btn-outline">See the Full Abdominal Etching Procedure</a>
@@ -298,6 +299,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="results-vary">Each photo names the procedures performed. Individual results vary, and the same results may not occur for every patient.</p>
           <p className="results-note">Actual patient photos. AI used only to add labels and remove personally identifying details.</p>
         </div>
       </section>
@@ -322,9 +324,9 @@ export default function HomePage() {
             </div>
             <div className="doctor-content">
               <h3>Dr. Babak Moein, MD, FACS</h3>
-              <div className="title">Double Board Certified Surgeon &middot; Dedicated Entirely to Men</div>
+              <div className="title">Board Certified General Surgeon &middot; Dedicated Entirely to Men</div>
               <p className="bio">
-                Dr. Babak Moein is <strong>double board certified in General Surgery and Cosmetic Surgery</strong>, a Fellow of the American College of Surgeons, and double-fellowship trained in Laparoscopic Minimally Invasive Surgery and Cosmetic Surgery, with <strong>over 20 years of surgical experience</strong>.
+                Dr. Babak Moein is <strong>board certified in General Surgery</strong>, a Diplomate of the American Board of Cosmetic Surgery, a Fellow of the American College of Surgeons, and double-fellowship trained in Laparoscopic Minimally Invasive Surgery and Cosmetic Surgery, with <strong>over 20 years of surgical experience</strong>.
               </p>
               <p className="bio">
                 XYSculptMD represents a deliberate commitment: surgery focused entirely on men, from a physician who understands the male body, male psychology, and what men want from surgery. Having performed <strong>over 2,000 procedures on male patients</strong>, from HD VASER etching to gynecomastia correction and complete torso transformations, Dr. Moein personally performs every procedure and provides direct 24/7 access during recovery.
@@ -332,11 +334,11 @@ export default function HomePage() {
               <div className="cred-grid">
                 <div className="cred-item">
                   <div className="cred-icon"><ShieldIcon /></div>
-                  <span>American Board of General Surgery</span>
+                  <span>Board Certified in General Surgery</span>
                 </div>
                 <div className="cred-item">
                   <div className="cred-icon"><ShieldIcon /></div>
-                  <span>American Board of Cosmetic Surgery</span>
+                  <span>Diplomate, American Board of Cosmetic Surgery</span>
                 </div>
                 <div className="cred-item">
                   <div className="cred-icon">
@@ -383,7 +385,7 @@ export default function HomePage() {
               <div className="diff-row"><CheckIcon /> Every technique and incision plan calibrated for the male body, never adapted from female procedures</div>
               <div className="diff-row"><CheckIcon /> VASER + Renuvion for HD muscle definition: etched abs, chest borders, back sculpting</div>
               <div className="diff-row"><CheckIcon /> Gynecomastia is a core specialty with hundreds of cases</div>
-              <div className="diff-row"><CheckIcon /> Double board certified in General and Cosmetic Surgery, FACS</div>
+              <div className="diff-row"><CheckIcon /> Board certified in General Surgery; Diplomate, American Board of Cosmetic Surgery; FACS</div>
               <div className="diff-row"><CheckIcon /> Male-only results across every procedure</div>
               <div className="diff-row"><CheckIcon /> Private parking, discreet entry, and one-on-one consultations in Century City</div>
             </div>

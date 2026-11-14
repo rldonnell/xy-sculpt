@@ -23,13 +23,13 @@ export const SITE = {
     neighborhood: 'Century City',
     facility: 'Beverly Century Surgical Center',
   },
-  hours: 'Mon to Fri, 9am to 6pm. Saturday by appointment.',
+  hours: 'Mon to Fri, 9am to 5pm. Saturday by appointment.',
   stats: {
     years: '20+',
     maleProcedures: '2,000+',
   },
   credentials: [
-    'Double board certified: General Surgery and Cosmetic Surgery',
+    'Board certified in General Surgery; Diplomate, American Board of Cosmetic Surgery',
     'Fellow, American College of Surgeons (FACS)',
     'Double fellowship trained: Laparoscopic Minimally Invasive Surgery and Cosmetic Surgery',
   ],

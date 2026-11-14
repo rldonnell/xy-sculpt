@@ -4,7 +4,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Male Tummy Tuck & Diastasis Recti Repair Los Angeles',
-  description: 'Male abdominoplasty and diastasis recti repair in Los Angeles. Flat abdomen, muscle repair, and excess skin removal planned for male anatomy by double board certified surgeon Dr. Babak Moein.',
+  description: 'Male abdominoplasty and diastasis recti repair in Los Angeles. Flat abdomen, muscle repair, and excess skin removal planned for male anatomy by board certified general surgeon Dr. Babak Moein.',
   alternates: { canonical: '/procedures/male-tummy-tuck' },
 };
 
@@ -16,7 +16,7 @@ const c: ProcedureContent = {
   h1Em: 'Built for the Male Frame.',
   sub: 'Excess skin removed, separated muscles repaired, and incisions placed low to stay hidden on a male body.',
   quickAnswer:
-    'A male tummy tuck (abdominoplasty) removes excess abdominal skin and fat and **repairs separated abdominal muscles** to create a flat, firm, masculine midsection, something liposuction alone cannot do. At XYSculptMD in Los Angeles it is performed by Dr. Babak Moein, MD, FACS, who is double board certified in General and Cosmetic Surgery. Most men take 2 to 3 weeks off desk work, with final results at 6 to 12 months.',
+    'A male tummy tuck (abdominoplasty) removes excess abdominal skin and fat and **repairs separated abdominal muscles** to create a flat, firm, masculine midsection, something liposuction alone cannot do. At XYSculptMD in Los Angeles it is performed by Dr. Babak Moein, MD, FACS, who is board certified in General Surgery and a Diplomate of the American Board of Cosmetic Surgery. Most men take 2 to 3 weeks off desk work, with final results at 6 to 12 months.',
   facts: [
     { label: 'Surgeon', value: SITE.doctor.withCreds },
     { label: 'Location', value: SITE.address.facility },
@@ -55,7 +55,7 @@ const c: ProcedureContent = {
     {
       title: 'Why XYSculptMD for a male tummy tuck',
       body:
-        'Dr. Babak Moein, MD, FACS is **double board certified in General Surgery and Cosmetic Surgery** and a Fellow of the American College of Surgeons. For abdominal wall work that combination is the point: the general-surgery side covers hernia and fascial repair, and the cosmetic side covers what the abdomen looks like afterward. The goal is a **flat, hard, masculine midsection with a defined waist**, and the scar is placed low within the natural hairline. Post-weight-loss patients can coordinate the weight-loss side with Dr. Moein’s bariatric practice, Healthy Life Bariatrics.',
+        'Dr. Babak Moein, MD, FACS is **board certified in General Surgery**, a Diplomate of the American Board of Cosmetic Surgery, and a Fellow of the American College of Surgeons. For abdominal wall work that combination is the point: the general-surgery side covers hernia and fascial repair, and the cosmetic side covers what the abdomen looks like afterward. The goal is a **flat, hard, masculine midsection with a defined waist**, and the scar is placed low within the natural hairline. Post-weight-loss patients can coordinate the weight-loss side with Dr. Moein’s bariatric practice, Healthy Life Bariatrics.',
     },
   ],
   cards: {
@@ -127,7 +127,7 @@ const c: ProcedureContent = {
     { label: 'Male Tummy Tuck Before & After', href: '/blog/male-tummy-tuck-before-and-after' },
     { label: 'Abdominal Etching', href: '/procedures/abdominal-etching' },
   ],
-  ctaLine: 'Discuss a male tummy tuck or diastasis repair with Dr. Moein, a board certified general and cosmetic surgeon.',
+  ctaLine: 'Discuss a male tummy tuck or diastasis repair with Dr. Moein, a board certified general surgeon.',
 };
 
 export default function MaleTummyTuckPage() {

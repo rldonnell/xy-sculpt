@@ -33,14 +33,14 @@ const REGIONS: Region[] = [
     id: 'chest', num: '01', area: 'Chest', view: 'front',
     title: 'Gynecomastia Surgery',
     desc: 'Eliminate excess chest tissue and sculpt a flat, masculine chest contour. Dr. Moein’s technique combines gland excision with VASER precision for natural-looking results.',
-    facts: ['From about $4,500', 'Desk work in 5 to 7 days'],
+    facts: ['$4,500 to $12,500+ by grade', 'Desk work in 5 to 7 days'],
     href: '/procedures/gynecomastia',
   },
   {
     id: 'abs', num: '02', area: 'Abdomen', view: 'front',
     title: 'Abdominal Etching',
     desc: 'HD VASER liposuction used as sculpture to reveal the six-pack, obliques, and serratus, then refined with targeted filler for definition etching alone can’t reach.',
-    facts: ['From $6,500', 'Desk work in 5 to 7 days'],
+    facts: ['$6,500 to $12,000 by areas treated', 'Desk work in 5 to 7 days'],
     href: '/procedures/abdominal-etching',
   },
   {

@@ -240,7 +240,7 @@ export default function ProcedureTemplate({ c }: { c: ProcedureContent }) {
             <div className="pt-review-badge">BM</div>
             <div>
               <div className="pt-review-title">Medically reviewed by {SITE.doctor.withCreds}</div>
-              <p>Double board certified in General Surgery and Cosmetic Surgery. Fellow, American College of Surgeons. Reviewed {c.reviewed}.</p>
+              <p>Board certified in General Surgery; Diplomate, American Board of Cosmetic Surgery. Fellow, American College of Surgeons. Reviewed {c.reviewed}.</p>
               <p className="pt-disclaimer">This page is for educational purposes only and is not medical advice. Individual results vary and all surgery carries risk. A personal consultation with {SITE.doctor.short} is required before any procedure.</p>
               {c.related && (
                 <div className="pt-related">

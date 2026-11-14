@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'XYSculptMD | Abdominal Etching & Male Body Sculpting Los Angeles',
     template: '%s | XYSculptMD',
   },
-  description: 'Double board certified surgeon Dr. Babak Moein specializes in abdominal etching, gynecomastia, male tummy tuck, and HD VASER body sculpting for men in Century City, Los Angeles.',
+  description: 'Board certified general surgeon Dr. Babak Moein specializes in abdominal etching, gynecomastia, male tummy tuck, and HD VASER body sculpting for men in Century City, Los Angeles.',
   metadataBase: new URL('https://xysculptmd.com'),
   alternates: {
     canonical: '/',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'XYSculptMD',
     title: 'XYSculptMD | The Architecture of the Male Form',
-    description: 'Abdominal etching and male body sculpting in Los Angeles by double board certified surgeon Dr. Babak Moein. 20+ years experience.',
+    description: 'Abdominal etching and male body sculpting in Los Angeles by board certified general surgeon Dr. Babak Moein. 20+ years experience.',
     url: 'https://xysculptmd.com',
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'XYSculptMD | The Architecture of the Male Form',
-    description: 'Abdominal etching and male body sculpting by double board certified surgeon Dr. Babak Moein.',
+    description: 'Abdominal etching and male body sculpting by board certified general surgeon Dr. Babak Moein.',
     images: ['/hero-model.jpg'],
   },
   robots: {
