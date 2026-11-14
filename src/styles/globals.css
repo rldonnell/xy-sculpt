@@ -963,3 +963,94 @@ section { padding: 100px 0; position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .he-line, .he-node { animation: none; stroke-dashoffset: 0; opacity: .45; }
 }
+
+/* ── Recovery timeline (homepage, src/components/RecoveryTimeline.tsx) ── */
+.recovery { background: var(--bg-elevated); }
+.rt { margin-top: 48px; }
+.rt-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+.rt-tabs button {
+  font: 600 14px/1 var(--font-display); color: var(--text-secondary);
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px;
+  padding: 12px 20px; cursor: pointer; transition: color .25s, border-color .25s, background .25s;
+}
+.rt-tabs button:hover { color: var(--text); border-color: var(--border-accent); }
+.rt-tabs button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.rt-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* The track is inset by the thumb's radius so bands line up with the thumb's centre */
+.rt-track-wrap { padding: 0 12px; }
+.rt-track { position: relative; height: 84px; }
+.rt-rail, .rt-progress { position: absolute; left: 0; top: 30px; height: 2px; border-radius: 2px; }
+.rt-rail { right: 0; background: var(--surface); }
+.rt-progress { background: linear-gradient(90deg, var(--accent-dim), var(--accent)); }
+.rt-band {
+  position: absolute; top: 22px; height: 18px; margin-left: -9px;
+  padding: 0 9px; box-sizing: content-box;
+  border-radius: 999px; border: 1px solid var(--border-accent); background: var(--bg);
+  transition: background .3s, border-color .3s, box-shadow .3s;
+}
+.rt-band.is-past { background: var(--accent-dim); }
+.rt-band.is-active { border-color: var(--accent); background: rgba(196,154,108,.28); box-shadow: 0 0 18px var(--accent-glow); }
+.rt-band-dot { position: absolute; left: 9px; top: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--accent); }
+.rt-tick { position: absolute; top: 48px; transform: translateX(-50%); }
+.rt-tick::before { content: ''; display: block; width: 1px; height: 6px; margin: 0 auto 6px; background: var(--text-muted); }
+.rt-tick span { display: block; font: 11px var(--font-mono); letter-spacing: 1px; color: var(--text-muted); white-space: nowrap; }
+@media (max-width: 600px) { .rt-tick.is-minor { display: none; } }
+
+.rt-range {
+  position: absolute; left: -12px; top: 19px; width: calc(100% + 24px);
+  height: 24px; margin: 0; background: transparent; cursor: grab;
+  -webkit-appearance: none; appearance: none;
+}
+.rt-range:active { cursor: grabbing; }
+.rt-range::-webkit-slider-runnable-track { height: 24px; background: transparent; }
+.rt-range::-moz-range-track { height: 24px; background: transparent; }
+.rt-range::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--accent); border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 20px var(--accent-glow);
+}
+.rt-range::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--accent); border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 20px var(--accent-glow);
+}
+.rt-range:focus-visible { outline: none; }
+.rt-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--accent-light), 0 0 20px var(--accent-glow); }
+.rt-range:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--accent-light), 0 0 20px var(--accent-glow); }
+.rt-hint { font: 12px var(--font-mono); letter-spacing: 1px; color: var(--text-muted); margin-top: 8px; }
+
+.rt-card {
+  margin-top: 32px; display: grid; grid-template-columns: 220px 1fr; gap: 32px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 32px; animation: bm-in .4s ease both;
+}
+@media (max-width: 700px) { .rt-card { grid-template-columns: 1fr; gap: 16px; padding: 24px; } }
+.rt-card-day { display: block; font-size: 40px; font-weight: 800; letter-spacing: -.02em; color: var(--accent); line-height: 1.1; }
+.rt-card-proc { display: block; font: 12px var(--font-mono); letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 6px; }
+.rt-card-when { font: 12px var(--font-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.rt-card-body p { font-size: 18px; line-height: 1.7; color: var(--text); margin-bottom: 18px; }
+.rt-card-body .proc-link svg { width: 14px; height: 14px; }
+.rt-note { margin-top: 14px; font-size: 13px; font-style: italic; color: var(--text-secondary); }
+@media (prefers-reduced-motion: reduce) { .rt-card { animation: none; } }
+
+/* ── Page transitions (src/app/template.tsx) ── */
+@view-transition { navigation: auto; }
+/* fill-mode "backwards" so no transform is left behind once it finishes
+   (a lingering transform would break position: fixed inside pages) */
+.page-enter { animation: page-in .55s cubic-bezier(.2,.7,.2,1) backwards; }
+@keyframes page-in { from { opacity: 0; transform: translateY(14px); } }
+.route-sweep {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 1000; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--accent-light));
+  transform-origin: left; transform: scaleX(0); opacity: 0;
+  animation: route-sweep .9s cubic-bezier(.65,0,.35,1);
+}
+@keyframes route-sweep {
+  0% { transform: scaleX(0); opacity: 1; }
+  70% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-enter, .route-sweep { animation: none; }
+}

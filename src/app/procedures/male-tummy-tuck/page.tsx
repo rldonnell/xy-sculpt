@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ProcedureTemplate, { type ProcedureContent } from '@/components/ProcedureTemplate';
 import { SITE } from '@/lib/site';
+import { RECOVERY } from '@/lib/recovery';
 
 export const metadata: Metadata = {
   title: 'Male Tummy Tuck & Diastasis Recti Repair Los Angeles',
@@ -95,14 +96,7 @@ const c: ProcedureContent = {
     'Those frustrated by skin folds that won’t respond to exercise',
     'Men seeking a combined abdomen and flank correction',
   ],
-  timeline: [
-    { when: 'Days 1 to 3', text: 'Rest with limited bending. Compression garment worn; walk bent slightly forward at first, straightening over several days.' },
-    { when: 'Days 10 to 14', text: 'Driving resumes once off pain medication and able to react safely.' },
-    { when: 'Weeks 2 to 3', text: 'Most men return to desk work (longer for physically demanding jobs).' },
-    { when: 'Week 6', text: 'Compression garment typically worn full-time through six weeks; light activity increases.' },
-    { when: 'Weeks 8 to 10', text: 'Gradual return to core training and strenuous activity as cleared.' },
-    { when: '6 to 12 months', text: 'Final result and complete scar maturation.' },
-  ],
+  timeline: RECOVERY.tummyTuck.timeline,
   cost: {
     title: 'What Does a Male Tummy Tuck Cost?',
     body: `A male tummy tuck at XYSculptMD is **quoted per patient and all-inclusive**. The price depends on the technique, whether muscle or hernia repair is needed, and whether liposuction is combined. Your exact quote is set at consultation.\n\nPricing includes the surgeon’s fee, facility, anesthesia, compression garments, and follow-up care. A diastasis-only repair or mini tummy tuck costs less than a full or extended abdominoplasty. Financing is available through ${SITE.financing}.`,
