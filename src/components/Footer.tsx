@@ -32,7 +32,6 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Practice</h4>
             <Link href="/about">About Dr. Moein</Link>
-            <Link href="/gallery">Before &amp; After</Link>
             <Link href="/for-men">Why Men Choose Us</Link>
             <Link href="/contact">Book Consultation</Link>
           </div>

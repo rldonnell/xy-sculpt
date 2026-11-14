@@ -37,7 +37,6 @@ export default function MaleButtLiftPage() {
         <p>Fat-transfer sculpting calibrated to the male ideal: athletic and upward, not curvier feminine volume.</p>
         <div className="cta-row" style={{ justifyContent: 'center', marginTop: 32 }}>
           <a href="/contact" className="btn btn-primary">Book Private Consultation</a>
-          <a href="/gallery" className="btn btn-outline">View Results</a>
         </div>
       </section>
 

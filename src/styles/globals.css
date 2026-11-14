@@ -337,7 +337,7 @@ section { padding: 100px 0; position: relative; }
 /* ── Results Gallery ── */
 .results { background: var(--bg); }
 .results-strip {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
   padding: 4px; background: #fff;
   margin-top: 56px; border-radius: var(--radius-lg); overflow: hidden;
 }
@@ -346,7 +346,7 @@ section { padding: 100px 0; position: relative; }
   position: relative; overflow: hidden;
 }
 .result-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-@media (max-width: 1024px) { .results-strip { grid-template-columns: 1fr 1fr; } }
+.results-note { margin-top: 14px; text-align: center; font-size: 13px; font-style: italic; color: var(--text-secondary); }
 @media (max-width: 640px) { .results-strip { grid-template-columns: 1fr; } }
 
 /* ── Doctor Section ── */
