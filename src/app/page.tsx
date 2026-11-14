@@ -54,8 +54,8 @@ const PROCEDURES = [
 
 const RESULTS = [
   { alt: 'Ab etching and gynecomastia surgery', image: '/results/ab-etching-gynecomastia-surgery-before-after.webp', width: 1200, height: 802 },
-  { alt: '360 liposuction and tummy tuck, front view', image: '/results/360-liposuction-tummy-tuck-front-before-after.webp', width: 1200, height: 800 },
-  { alt: '360 liposuction and tummy tuck, side view', image: '/results/360-liposuction-tummy-tuck-side-before-after.webp', width: 1200, height: 800 },
+  { alt: '360 liposuction and tummy tuck, front view', image: '/results/360-liposuction-tummy-tuck-front-before-after.webp', width: 1536, height: 1024 },
+  { alt: '360 liposuction and tummy tuck, side view', image: '/results/360-liposuction-tummy-tuck-side-before-after.webp', width: 1536, height: 1024 },
   { alt: 'Tummy tuck, gynecomastia surgery, and liposuction with ab etching', image: '/results/tummy-tuck-gynecomastia-liposuction-ab-etching-before-after.webp', width: 1200, height: 800 },
   { alt: 'Ab etching, liposuction, and excess skin removal', image: '/results/ab-etching-liposuction-excess-skin-removal-before-after.webp', width: 1200, height: 800 },
   { alt: 'Tummy tuck and liposuction', image: '/results/tummy-tuck-liposuction-before-after.webp', width: 1200, height: 800 },
