@@ -13,12 +13,12 @@ interface GHLFormProps {
  * GoHighLevel Form Embed (inline layout)
  * Uses GHL's form_embed.js, which auto-resizes the iframe and passes the
  * parent page's URL params (utm_*, gclid, fbclid) through to the form.
- * Form ID can be overridden with NEXT_PUBLIC_GHL_FORM_ID.
+ * Default form: "General Surgery" (pqtnuyiiqT1fsKCxbH36).
  */
 export default function GHLForm({
-  formId = process.env.NEXT_PUBLIC_GHL_FORM_ID || 'ycnLuDQA4jpW51aii4Vk',
-  formName = 'XYSculptMD Contact Form',
-  height = 1279,
+  formId = 'pqtnuyiiqT1fsKCxbH36',
+  formName = 'General Surgery',
+  height = 736,
   className = '',
 }: GHLFormProps) {
   const iframeId = `inline-${formId}`;
@@ -40,6 +40,8 @@ export default function GHLForm({
         data-height={String(height)}
         data-layout-iframe-id={iframeId}
         data-form-id={formId}
+        data-cookie-consent="true"
+        data-cookie-consent-provider="auto"
         title={formName}
       />
       <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
